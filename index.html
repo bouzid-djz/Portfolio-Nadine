@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nadine Ibrahim — Portfolio BTS SIO SISR</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-inner">
+    <div class="loader-logo">NI</div>
+    <div class="loader-name">Nadine Ibrahim</div>
+    <div class="loader-bar-wrap"><div class="loader-bar" id="loaderBar"></div></div>
+    <div class="loader-status" id="loaderStatus">Chargement…</div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLightbox()">
+  <button id="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightbox-img" src="" alt="">
+  <div id="lightbox-caption"></div>
+</div>
+
+<!-- CURSEUR -->
+<div id="cursor-outer"></div>
+<div id="cursor-inner"></div>
+
+<!-- SCROLL PROGRESS -->
+<div id="scroll-progress"></div>
+
+<canvas id="matrix-canvas"></canvas>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+
+<!-- ══ NAVBAR ══ -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#accueil" class="nav-logo">
+      <div class="logo-badge">NI</div>
+      <div>
+        <span class="logo-name">Nadine Ibrahim</span>
+        <span class="logo-role">BTS SIO SISR</span>
+      </div>
+    </a>
+    <button class="burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-menu" id="nav-menu">
+      <li><a href="#accueil"     class="nav-link active">Accueil</a></li>
+      <li><a href="#apropos"     class="nav-link">À propos</a></li>
+      <li><a href="#btssio"      class="nav-link">BTS SIO</a></li>
+      <li><a href="#chiffres"    class="nav-link">Chiffres</a></li>
+      <li><a href="#projets"     class="nav-link">Projets</a></li>
+      <li><a href="#competences" class="nav-link">Compétences</a></li>
+      <li><a href="#cv"          class="nav-link">CV</a></li>
+      <li><a href="#synthese"    class="nav-link">Synthèse</a></li>
+      <li><a href="#veille"      class="nav-link">Veille</a></li>
+      <li><a href="#contact"     class="nav-link">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+
+<!-- ══ HERO ══ -->
+<section id="accueil" class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-orb"></div>
+  <div class="wrap">
+    <div class="hero-content">
+      <div class="hero-tag">
+        <span class="hero-tag-dot"></span>
+        BTS SIO — Option SISR
+      </div>
+      <h1>
+        <span class="hero-hello">Bonjour, je suis</span>
+        <span class="hero-name" id="typed-name"></span><span class="type-cursor" id="type-cursor">|</span>
+      </h1>
+      <div class="hero-name-line"></div>
+      <div class="hero-chips">
+        <span class="hero-chip">Administration systèmes</span>
+        <span class="hero-sep">·</span>
+        <span class="hero-chip">Réseaux</span>
+        <span class="hero-sep">·</span>
+        <span class="hero-chip">Cybersécurité</span>
+      </div>
+      <p class="hero-desc">Étudiante passionnée par les infrastructures informatiques, je conçois et sécurise des environnements techniques performants.</p>
+      <div class="hero-btns">
+        <a href="#apropos" class="btn-rose">Mon profil</a>
+        <a href="#projets" class="btn-outline">Mes projets</a>
+      </div>
+      <div class="hero-scroll">
+        <div class="scroll-line"></div>
+        <span class="scroll-txt">Défiler</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ À PROPOS ══ -->
+<section id="apropos" class="section">
+  <div class="section-blob blob-left"></div>
+  <div class="wrap">
+    <h2 class="section-title">À propos</h2>
+    <div class="section-bar"></div>
+    <div class="apropos-grid">
+      <div class="card glass reveal">
+        <div class="av-row">
+          <div class="av-circle">NI</div>
+          <div>
+            <p class="av-name">Nadine Ibrahim</p>
+            <p class="av-sub">19 ans — BTS SIO SISR</p>
+          </div>
+        </div>
+        <p class="text-lead">Je suis Nadine Ibrahim, 19 ans, étudiante en BTS SIO option SISR, passionnée par les nouvelles technologies, l'administration des systèmes et la cybersécurité.</p>
+        <p class="text-body">Ce portfolio présente mon parcours, mes projets ainsi que mes compétences dans le domaine de l'informatique. Je m'intéresse particulièrement à la sécurisation des infrastructures réseau, à la virtualisation et à l'administration de serveurs Linux et Windows.</p>
+        <p class="text-body">N'hésitez pas à explorer mes réalisations, à consulter mon CV et à me contacter si vous avez des questions.</p>
+        <div class="chip-row">
+          <span class="chip">Linux</span>
+          <span class="chip">Cisco</span>
+          <span class="chip">Cybersécurité</span>
+          <span class="chip">VMware</span>
+        </div>
+      </div>
+      <div class="reveal">
+        <p class="par-label">Mon parcours</p>
+        <div class="mini-tl">
+          <div class="tl-item current">
+            <div class="tl-dot"></div>
+            <div class="tl-box glass">
+              <span class="tl-period rose">2024 — 2026</span>
+              <p class="tl-school">IPPSI — Serris</p>
+              <h4 class="tl-title">BTS SIO — Option SISR</h4>
+              <p class="tl-desc">Administration systèmes et réseaux, virtualisation, cybersécurité, Windows Server, Linux.</p>
+              <div class="chip-row" style="margin-top:.8rem">
+                <span class="chip">SISR</span><span class="chip">Cisco</span><span class="chip">VMware</span>
+              </div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-box glass">
+              <span class="tl-period">2021 — 2024</span>
+              <p class="tl-school">Lycée Van Dongen — Lagny-sur-Marne</p>
+              <h4 class="tl-title">Baccalauréat STMG — Marketing</h4>
+              <p class="tl-desc">Management, gestion d'entreprise, communication et marketing digital.</p>
+              <div class="chip-row" style="margin-top:.8rem">
+                <span class="chip">STMG</span><span class="chip">Marketing</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BTS SIO ══ -->
+<section id="btssio" class="section">
+  <div class="section-blob blob-right"></div>
+  <div class="wrap">
+    <h2 class="section-title">Le BTS SIO</h2>
+    <div class="section-bar"></div>
+    <div class="card glass reveal" style="margin-bottom:2rem">
+      <p class="text-lead">Le <strong>BTS SIO</strong> — Brevet de Technicien Supérieur Services Informatiques aux Organisations — est un diplôme d'État de niveau Bac+2 qui forme aux métiers de l'informatique en entreprise. La formation dure 2 ans et se décline en deux options selon la spécialité choisie : <strong>SISR</strong>, orientée réseaux, systèmes et infrastructure, et <strong>SLAM</strong>, orientée développement logiciel et applications. J'ai choisi l'option SISR car je voulais travailler sur des infrastructures réelles — configurer des serveurs, sécuriser des réseaux et comprendre comment protéger un système d'information.</p>
+    </div>
+    <div class="bts-options">
+      <div class="card glass reveal">
+        <div class="opt-head">
+          <h3 class="opt-title">Option SISR</h3>
+          <span class="badge-rose">Mon choix</span>
+        </div>
+        <p class="opt-sub">Solutions d'Infrastructure, Systèmes et Réseaux</p>
+        <p class="text-body" style="margin-bottom:1.2rem">L'option SISR forme à l'administration et à la sécurisation des infrastructures : gestion de serveurs <strong>Linux</strong> et <strong>Windows Server</strong>, configuration réseau <span class="def-tag" data-def="Cisco est le leader mondial des équipements réseau (routeurs, switches). En BTS SISR, on utilise leur logiciel Packet Tracer pour simuler des réseaux.">Cisco</span>, mise en place de <span class="def-tag" data-def="Un VLAN (Virtual LAN) permet de diviser un réseau physique en plusieurs segments logiques isolés. Ex : un VLAN pour les serveurs, un pour les postes clients, un pour les administrateurs.">VLANs</span>, virtualisation avec <span class="def-tag" data-def="VMware et Proxmox sont des hyperviseurs : ils permettent de faire tourner plusieurs systèmes d'exploitation en même temps sur un seul serveur physique, en créant des machines virtuelles.">VMware ou Proxmox</span>, et sécurisation des accès.</p>
+        <button class="deb-btn" onclick="toggleDebouche('sisr')" id="btn-sisr">Voir les débouchés ▼</button>
+        <div class="deb-panel" id="deb-sisr">
+          <p class="deb-label">Débouchés SISR</p>
+          <div class="deb-grid">
+            <div class="deb-item">Administrateur systèmes et réseaux</div>
+            <div class="deb-item">Technicien cybersécurité</div>
+            <div class="deb-item">Administrateur réseau</div>
+            <div class="deb-item">Technicien support informatique</div>
+            <div class="deb-item">Ingénieur cloud / infrastructure</div>
+            <div class="deb-item">Responsable réseau</div>
+          </div>
+        </div>
+      </div>
+      <div class="card glass reveal">
+        <div class="opt-head">
+          <h3 class="opt-title">Option SLAM</h3>
+          <span class="badge-grey">Alternative</span>
+        </div>
+        <p class="opt-sub">Solutions Logicielles et Applications Métiers</p>
+        <p class="text-body" style="margin-bottom:1.2rem">L'option SLAM forme au développement logiciel : création d'applications web et mobile, conception de bases de données, développement d' <span class="def-tag" data-def="Une API (Application Programming Interface) est un système qui permet à deux logiciels de communiquer entre eux. Ex : une appli météo utilise l'API de Météo France pour récupérer les données.">APIs</span> et maintenance de logiciels métier — en Python, Java, PHP ou JavaScript.</p>
+        <button class="deb-btn" onclick="toggleDebouche('slam')" id="btn-slam">Voir les débouchés ▼</button>
+        <div class="deb-panel" id="deb-slam">
+          <p class="deb-label">Débouchés SLAM</p>
+          <div class="deb-grid">
+            <div class="deb-item">Développeur web / mobile</div>
+            <div class="deb-item">Développeur back-end</div>
+            <div class="deb-item">Développeur front-end</div>
+            <div class="deb-item">Analyste programmeur</div>
+            <div class="deb-item">Technicien maintenance logicielle</div>
+            <div class="deb-item">Développeur d'applications</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CHIFFRES CLÉS ══ -->
+<section id="chiffres" class="section">
+  <div class="section-blob blob-left"></div>
+  <div class="wrap">
+    <h2 class="section-title">Chiffres clés</h2>
+    <div class="section-bar"></div>
+    <div class="stats-grid">
+
+      <!-- → Projets -->
+      <a href="#projets" class="stat-card glass reveal stat-link">
+        <div class="stat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7a2 2 0 012-2h6l2 2h8a2 2 0 012 2v9a2 2 0 01-2 2H4a2 2 0 01-2-2V7z"/></svg>
+        </div>
+        <div class="stat-num" data-target="5">0</div>
+        <div class="stat-lbl">Projets réalisés</div>
+        <div class="stat-arrow">Voir les projets →</div>
+      </a>
+
+      <!-- → Compétences -->
+      <a href="#competences" class="stat-card glass reveal stat-link">
+        <div class="stat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <div class="stat-num" data-target="6">0</div>
+        <div class="stat-lbl">Compétences techniques</div>
+        <div class="stat-arrow">Voir les compétences →</div>
+      </a>
+
+      <!-- → Certifications -->
+      <a href="#competences" class="stat-card glass reveal stat-link">
+        <div class="stat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/></svg>
+        </div>
+        <div class="stat-num" data-target="2">0</div>
+        <div class="stat-lbl">Certifications obtenues</div>
+        <div class="stat-arrow">Voir les certifs →</div>
+      </a>
+
+      <!-- → BTS SIO -->
+      <a href="#btssio" class="stat-card glass reveal stat-link">
+        <div class="stat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <div class="stat-num" data-target="2">0</div>
+        <div class="stat-lbl">Années de formation</div>
+        <div class="stat-arrow">Voir le BTS SIO →</div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROJETS ══ -->
+<section id="projets" class="section">
+  <div class="section-blob blob-right"></div>
+  <div class="wrap">
+    <h2 class="section-title">Projets</h2>
+    <div class="section-bar"></div>
+    <div class="slider-wrap">
+
+      <button class="slider-btn prev" onclick="prevProject()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="slider-btn next" onclick="nextProject()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+
+      <div class="slide active">
+        <div class="slide-img-wrap">
+          <div class="slide-img" onclick="openLightbox('schema.png','Infrastructure réseau GSB')">
+            <img src="schema.png" alt="Infrastructure réseau" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22%3E%3Crect fill=%22%23111827%22 width=%22600%22 height=%22400%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2224%22 fill=%22%2310B981%22%3EInfrastructure Réseau%3C/text%3E%3C/svg%3E'">
+            <div class="slide-img-open">⛶ Agrandir</div>
+          </div>
+        </div>
+        <div class="slide-info">
+          <div class="proj-num">Projet 01</div>
+          <h3 class="slide-title">Infrastructure réseau GSB</h3>
+          <div class="proj-objectif">
+            <span class="proj-obj-label">Objectif</span>
+            Proposer et déployer une infrastructure réseau complète pour l'entreprise pharmaceutique GSB.
+          </div>
+          <div class="proj-steps">
+            <div class="proj-step">
+              <span class="step-num">1</span>
+              <span>Élaboration d'une <strong>proposition commerciale</strong> (matériel + logiciel) présentée et validée par le client</span>
+            </div>
+            <div class="proj-step">
+              <span class="step-num">2</span>
+              <span>Déploiement sur <strong>Cisco Packet Tracer</strong> : switch niveau 3 en cœur de réseau pour le routage, switches niveau 2 par étage pour la distribution</span>
+            </div>
+            <div class="proj-step">
+              <span class="step-num">3</span>
+              <span>Segmentation en <span class="def-tag" data-def="Un VLAN (Virtual LAN) isole les équipements en groupes logiques sur le même réseau physique. Ex : VLAN Serveurs, VLAN RH, VLAN Admins — ils ne communiquent pas entre eux sauf autorisation.">VLANs</span> par service, configuration des <span class="def-tag" data-def="Une ACL (Access Control List) est une liste de règles qui autorise ou bloque du trafic réseau selon l'adresse IP source, destination ou le port. C'est le filtrage au niveau du routeur.">ACL</span> et tests de connectivité</span>
+            </div>
+          </div>
+          <div class="proj-resultat">Infrastructure réseau opérationnelle, segmentée et sécurisée</div>
+          <div class="chip-row" style="margin-top:1.2rem">
+            <span class="chip def-tag" data-def="Cisco est le leader mondial des équipements réseau. Ici on utilise leurs routeurs et switches pour construire l'infrastructure GSB.">Cisco</span>
+            <span class="chip def-tag" data-def="VLAN (Virtual LAN) : divise le réseau en segments logiques isolés. Ex : VLAN Serveurs, VLAN RH — chaque service a son propre réseau.">VLAN</span>
+            <span class="chip def-tag" data-def="Le routage permet de faire communiquer des réseaux différents entre eux. Le switch niveau 3 lit l'adresse IP et dirige les paquets vers le bon réseau.">Routage</span>
+            <span class="chip def-tag" data-def="Cisco Packet Tracer est un logiciel de simulation réseau qui permet de créer et tester des maquettes réseau virtuelles sans matériel physique.">Packet Tracer</span>
+          </div>
+          <a href="projet2.zip" download class="btn-rose" style="margin-top:1.2rem">Télécharger le projet</a>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="slide-img-wrap">
+          <div class="slide-img" onclick="openLightbox('sysdream.png','Entraînement cybersécurité — Stage')">
+            <img src="sysdream.png" alt="Cybersécurité stage" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22 viewBox=%220 0 600 400%22%3E%3Crect fill=%22%230b0e11%22 width=%22600%22 height=%22400%22/%3E%3Crect x=%2220%22 y=%2216%22 width=%22560%22 height=%2228%22 rx=%224%22 fill=%22%23c2185b%22 opacity=%220.9%22/%3E%3Ctext x=%2240%22 y=%2236%22 font-family=%22monospace%22 font-size=%2213%22 fill=%22white%22 font-weight=%22bold%22%3ECybersécurité — Entraînement Pratique%3C/text%3E%3Crect x=%2220%22 y=%2256%22 width=%22265%22 height=%22148%22 rx=%224%22 fill=%22%23111827%22 stroke=%22%23c2185b%22 stroke-width=%221%22/%3E%3Ctext x=%2235%22 y=%2278%22 font-family=%22monospace%22 font-size=%2212%22 fill=%22%23c2185b%22 font-weight=%22bold%22%3ETryHackMe%3C/text%3E%3Ccircle cx=%22250%22 cy=%2272%22 r=%225%22 fill=%2210B981%22 fill=%22%2310B981%22/%3E%3Ctext x=%22260%22 y=%2277%22 font-family=%22monospace%22 font-size=%2210%22 fill=%22%2310B981%22%3Eactif%3C/text%3E%3Ctext x=%2235%22 y=%2298%22 font-family=%22monospace%22 font-size=%2210%22 fill=%22%23aaa%22%3EParcours : Pre-Security%3C/text%3E%3Ctext x=%2235%22 y=%22114%22 font-family=%22monospace%22 font-size=%2210%22 fill=%22%23aaa%22%3EParcours : SOC Level 1%3C/text%3E%3Ctext x=%2235%22 y=%22130%22 font-family=%22monospace%22 font-size=%2210%22 fill=%22%23aaa%22%3ERooms : Linux, Réseaux, Web%3C/text%3E%3Ctext x=%2235%22 y=%22146%22 font-family=%22monospace%22 font-size=%2210%22 fill=%22%23aaa%22%3ECtf challenges — Machines guidées%3C/text%3E%3Ctext x=%2235%22 y=%22165%22 font-family=%22monospace%22 font-size=%2211%22 fill=%22%23e879a0%22 font-weight=%22bold%22%3EApproche progressive et guidée%3C/text%3E%3Crect x=%22295%22 y=%2256%22 width=%22285%22 height=%22148%22 rx=%224%22 fill=%22%23111827%22 stroke=%22%2310B981%22 stroke-width=%221%22/%3E%3Ctext x=%22310%22 y=%2278%22 font-family=%22monospace%22 font-size=%2212%22 fill=%22%2310B981%22 font-weight=%22bold%22%3EHack The Box%3C/text%3E%3Ccircle cx=%22545%22 cy=%2272%22 r=%225%22 fill=%22%2310B981%22/%3E%3Ctext x=%22555%22 y=%2277%22 font-family=%22monospace%22 font-size=%2210%22 fill=%22%2310B981%22%3Eactif%3C/text%3E%3Ctext x=%22310%22 y=%2298%22 font-family=%22monospace%22 font-size=%2210%22 fill=%22%23aaa%22%3EMachines : Starting Point%3C/text%3E%3Ctext x=%22310%22 y=%22114%22 font-family=%22monospace%22 font-size=%2210%22 fill=%22%23aaa%22%3EEnvironnement réaliste linux%3C/text%3E%3Ctext x=%22310%22 y=%22130%22 font-family=%22monospace%22 font-size=%2210%22 fill=%22%23aaa%22%3EPénétration, escalade de privil.%3C/text%3E%3Ctext x=%22310%22 y=%22146%22 font-family=%22monospace%22 font-size=%2210%22 fill=%22%23aaa%22%3ETools : nmap, Burp Suite, shell%3C/text%3E%3Ctext x=%22310%22 y=%22165%22 font-family=%22monospace%22 font-size=%2211%22 fill=%22%2310B981%22 font-weight=%22bold%22%3EEnvironnements offensifs réels%3C/text%3E%3Crect x=%2220%22 y=%22214%22 width=%22560%22 height=%22110%22 rx=%224%22 fill=%22%23111827%22 stroke=%22%23a855f7%22 stroke-width=%221%22/%3E%3Ctext x=%2235%22 y=%22236%22 font-family=%22monospace%22 font-size=%2212%22 fill=%22%23a855f7%22 font-weight=%22bold%22%3EFormations Sysdream — Certifications obtenues%3C/text%3E%3Crect x=%2235%22 y=%22248%22 width=%22240%22 height=%2228%22 rx=%223%22 fill=%22%23a855f7%22 opacity=%220.15%22/%3E%3Ctext x=%2248%22 y=%22265%22 font-family=%22monospace%22 font-size=%2211%22 fill=%22%23d8b4fe%22 font-weight=%22bold%22%3EHSF — Hacking %26 Sécurité : Fondamentaux%3C/text%3E%3Crect x=%22295%22 y=%22248%22 width=%22265%22 height=%2228%22 rx=%223%22 fill=%22%23c2185b%22 opacity=%220.15%22/%3E%3Ctext x=%22308%22 y=%22265%22 font-family=%22monospace%22 font-size=%2211%22 fill=%22%23e879a0%22 font-weight=%22bold%22%3EHSA — Hacking %26 Sécurité : Avancé%3C/text%3E%3Ctext x=%2235%22 y=%22302%22 font-family=%22monospace%22 font-size=%2210%22 fill=%22%23aaa%22%3EReconnaissance — Exploitation — Post-exploitation — Reporting%3C/text%3E%3C/svg%3E'">
+            <div class="slide-img-open">⛶ Agrandir</div>
+          </div>
+        </div>
+        <div class="slide-info">
+          <div class="proj-num">Projet 02</div>
+          <h3 class="slide-title">Entraînement cybersécurité — Stage</h3>
+          <div class="proj-objectif">
+            <span class="proj-obj-label">Objectif</span>
+            Développer des compétences pratiques en cybersécurité offensive via des plateformes spécialisées et valider ces acquis par des certifications reconnues dans le secteur.
+          </div>
+          <div class="proj-steps">
+            <div class="proj-step">
+              <span class="step-num">1</span>
+              <span>Entraînement sur <strong>TryHackMe</strong> — parcours guidés Pre-Security et SOC Level 1 : Linux, réseaux, reconnaissance, vulnérabilités web</span>
+            </div>
+            <div class="proj-step">
+              <span class="step-num">2</span>
+              <span>Entraînement sur <strong>Hack The Box</strong> — machines Starting Point en environnement réaliste : scan avec <strong>nmap</strong>, exploitation, escalade de privilèges, utilisation de <strong>Burp Suite</strong></span>
+            </div>
+            <div class="proj-step">
+              <span class="step-num">3</span>
+              <span>Suivi des formations <strong>Sysdream</strong> : <strong>HSF</strong> (Hacking &amp; Sécurité : Les Fondamentaux) et <strong>HSA</strong> (Hacking &amp; Sécurité : Avancé)</span>
+            </div>
+          </div>
+          <div class="proj-resultat">Pratique des techniques de test d'intrusion sur environnements Linux et web</div>
+          <div class="chip-row" style="margin-top:1.2rem">
+            <span class="chip def-tag" data-def="TryHackMe est une plateforme d'apprentissage en cybersécurité avec des parcours guidés. On résout des challenges progressifs dans un navigateur, sans installer quoi que ce soit.">TryHackMe</span>
+            <span class="chip def-tag" data-def="Hack The Box est une plateforme de cybersécurité offensive avec des machines virtuelles à compromettre. Environnement réaliste, utilisé par les professionnels du pentest.">Hack The Box</span>
+            <span class="chip def-tag" data-def="HSF — Hacking &amp; Sécurité : Les Fondamentaux. Formation Sysdream couvrant les bases du pentest : reconnaissance, exploitation web, post-exploitation.">HSF</span>
+            <span class="chip def-tag" data-def="HSA — Hacking &amp; Sécurité : Avancé. Formation Sysdream niveau expert couvrant les techniques avancées d'attaque et de défense des systèmes.">HSA</span>
+            <span class="chip def-tag" data-def="Burp Suite est l'outil de référence pour tester la sécurité des applications web. Il intercepte les requêtes HTTP entre le navigateur et le serveur pour analyser et modifier les échanges.">Burp Suite</span>
+            <span class="chip def-tag" data-def="Kali Linux est une distribution Linux spécialement conçue pour la cybersécurité offensive. Elle intègre des centaines d'outils de pentest : nmap, Burp Suite, Metasploit, Wireshark...">Kali Linux</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="slide-img-wrap">
+          <div class="slide-img" onclick="openLightbox('intranet.png','Déploiement intranet')">
+            <img src="intranet.png" alt="Intranet" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22%3E%3Crect fill=%22%23111827%22 width=%22600%22 height=%22400%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2224%22 fill=%22%2310B981%22%3EDéploiement Intranet%3C/text%3E%3C/svg%3E'">
+            <div class="slide-img-open">⛶ Agrandir</div>
+          </div>
+        </div>
+        <div class="slide-info">
+          <div class="proj-num">Projet 03</div>
+          <h3 class="slide-title">Déploiement intranet Windows Server</h3>
+          <div class="proj-objectif">
+            <span class="proj-obj-label">Objectif</span>
+            Déployer un intranet d'entreprise complet et sécurisé sous Windows Server 2019.
+          </div>
+          <div class="proj-steps">
+            <div class="proj-step">
+              <span class="step-num">1</span>
+              <span>Installation des rôles <span class="def-tag" data-def="Active Directory (AD) est l'annuaire centralisé de Microsoft. Il gère les utilisateurs, les machines et les droits d'accès d'une entreprise. C'est le point central de l'authentification réseau.">Active Directory</span>, <span class="def-tag" data-def="DNS (Domain Name System) : traduit les noms de domaine en adresses IP. Ex : 'serveur.local' → 192.168.1.10. Sans DNS, les machines ne se trouvent pas par leur nom.">DNS</span> et <span class="def-tag" data-def="DHCP (Dynamic Host Configuration Protocol) : attribue automatiquement une adresse IP aux machines qui se connectent au réseau. Sans DHCP, il faudrait configurer chaque IP à la main.">DHCP</span> sur le contrôleur de domaine</span>
+            </div>
+            <div class="proj-step">
+              <span class="step-num">2</span>
+              <span>Création des comptes utilisateurs par service, groupes de sécurité et <span class="def-tag" data-def="GPO (Group Policy Object) : politique de groupe qui s'applique automatiquement à des utilisateurs ou machines dans l'Active Directory. Ex : forcer un fond d'écran, bloquer l'accès au panneau de config, imposer la complexité des mots de passe.">GPO</span></span>
+            </div>
+            <div class="proj-step">
+              <span class="step-num">3</span>
+              <span>Sécurisation : <strong>pare-feu Windows Server</strong>, règles de filtrage, partages réseau par département</span>
+            </div>
+          </div>
+          <div class="proj-resultat">Intranet fonctionnel, centralisé et sécurisé — les utilisateurs accèdent aux ressources selon leurs droits</div>
+          <div class="chip-row" style="margin-top:1.2rem">
+            <span class="chip def-tag" data-def="Windows Server est le système d'exploitation serveur de Microsoft. Il héberge les services réseau d'une entreprise : Active Directory, DNS, DHCP, partages de fichiers...">Windows Server</span>
+            <span class="chip def-tag" data-def="Active Directory (AD) est l'annuaire centralisé de Microsoft. Il gère tous les utilisateurs, machines et droits d'accès d'un réseau Windows.">Active Directory</span>
+            <span class="chip def-tag" data-def="DNS (Domain Name System) : traduit les noms en adresses IP. Ex : serveur.local → 192.168.1.10. Sans DNS, les machines ne se trouvent pas par leur nom sur le réseau.">DNS</span>
+            <span class="chip def-tag" data-def="DHCP (Dynamic Host Configuration Protocol) : attribue automatiquement une adresse IP aux machines qui rejoignent le réseau. Sans DHCP, il faudrait configurer chaque adresse à la main.">DHCP</span>
+            <span class="chip def-tag" data-def="GPO (Group Policy Object) : règles qui s'appliquent automatiquement aux utilisateurs ou machines de l'Active Directory. Ex : forcer un fond d'écran, bloquer l'accès au panneau de config, imposer des mots de passe complexes.">GPO</span>
+          </div>
+          <a href="projet3.pdf" download class="btn-rose" style="margin-top:1.2rem">Télécharger le rapport</a>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="slide-img-wrap">
+          <div class="slide-img" onclick="openLightbox('sso.png','Gestionnaire d\'identité SSO')">
+            <img src="sso.png" alt="SSO" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22%3E%3Crect fill=%22%23111827%22 width=%22600%22 height=%22400%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2224%22 fill=%22%2310B981%22%3ESSO - Authentification%3C/text%3E%3C/svg%3E'">
+            <div class="slide-img-open">⛶ Agrandir</div>
+          </div>
+        </div>
+        <div class="slide-info">
+          <div class="proj-num">Projet 04</div>
+          <h3 class="slide-title">Gestionnaire d'identité SSO</h3>
+          <div class="proj-objectif">
+            <span class="proj-obj-label">Objectif</span>
+            Mettre en place un système d'authentification unique pour que les employés n'aient qu'un seul login pour toutes les applications.
+          </div>
+          <div class="proj-steps">
+            <div class="proj-step">
+              <span class="step-num">1</span>
+              <span>Préparation de l'<span class="def-tag" data-def="Active Directory (AD) est l'annuaire centralisé de Microsoft. Il gère les utilisateurs, les machines et les droits d'accès d'une entreprise. C'est le point central de l'authentification réseau.">Active Directory</span> : vérification et nettoyage des données utilisateurs avant synchronisation</span>
+            </div>
+            <div class="proj-step">
+              <span class="step-num">2</span>
+              <span>Configuration de la synchronisation <span class="def-tag" data-def="LDAP (Lightweight Directory Access Protocol) : protocole qui permet de lire et modifier un annuaire (comme Active Directory). Le SSO s'en sert pour récupérer les infos utilisateurs depuis l'AD.">LDAP</span> entre l'AD et le gestionnaire d'identité <span class="def-tag" data-def="SSO (Single Sign-On) : système d'authentification unique. L'utilisateur se connecte une seule fois et accède à toutes ses applications sans ressaisir son mot de passe. Ex : se connecter à son PC et avoir automatiquement accès à sa messagerie, son intranet, son GLPI…">SSO</span></span>
+            </div>
+            <div class="proj-step">
+              <span class="step-num">3</span>
+              <span>Connexion des applications : <strong>intranet, messagerie, GLPI, portail RH</strong> — tests multi-profils et support au déploiement</span>
+            </div>
+          </div>
+          <div class="proj-resultat">1 seul identifiant pour accéder à toutes les applications de l'entreprise</div>
+          <div class="chip-row" style="margin-top:1.2rem">
+            <span class="chip def-tag" data-def="SSO (Single Sign-On) : authentification unique. L'utilisateur se connecte une seule fois et accède à toutes ses applications sans ressaisir son mot de passe. Ex : un seul login pour la messagerie, l'intranet, le GLPI...">SSO</span>
+            <span class="chip def-tag" data-def="LDAP (Lightweight Directory Access Protocol) : protocole qui permet de lire et interroger un annuaire comme l'Active Directory. Le SSO utilise LDAP pour récupérer les infos des utilisateurs.">LDAP</span>
+            <span class="chip def-tag" data-def="Active Directory (AD) est l'annuaire centralisé de Microsoft. Il gère tous les utilisateurs, machines et droits d'accès d'un réseau Windows.">Active Directory</span>
+          </div>
+          <a href="Rapport_Stage_SSO_Nadine_Ibrahim.pdf" download class="btn-rose" style="margin-top:1.2rem">Télécharger le rapport</a>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="slide-img-wrap">
+          <div class="slide-img" onclick="openLightbox('proxmox.png','Proxmox — GLPI &amp; Routage inter-VLAN')">
+            <img src="proxmox.png" alt="Proxmox VE" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22 viewBox=%220 0 600 400%22%3E%3Crect fill=%22%230b0e11%22 width=%22600%22 height=%22400%22/%3E%3Crect x=%2220%22 y=%2216%22 width=%22560%22 height=%2228%22 rx=%224%22 fill=%22%23E57000%22 opacity=%220.9%22/%3E%3Ctext x=%2240%22 y=%2236%22 font-family=%22monospace%22 font-size=%2213%22 fill=%22white%22 font-weight=%22bold%22%3EProxmox VE 8.2 — Node: pve%3C/text%3E%3Ctext x=%22480%22 y=%2236%22 font-family=%22monospace%22 font-size=%2211%22 fill=%22%23aaffaa%22%3E● online%3C/text%3E%3Crect x=%2220%22 y=%2256%22 width=%22130%22 height=%22328%22 rx=%224%22 fill=%22%23111827%22 stroke=%22%23E57000%22 stroke-width=%221%22/%3E%3Ctext x=%2230%22 y=%2278%22 font-family=%22monospace%22 font-size=%2211%22 fill=%22%23E57000%22 font-weight=%22bold%22%3EDatacenter%3C/text%3E%3Ctext x=%2236%22 y=%2298%22 font-family=%22monospace%22 font-size=%2210%22 fill=%22%2310B981%22%3E▼ pve (node)%3C/text%3E%3Crect x=%2238%22 y=%22108%22 width=%22104%22 height=%2222%22 rx=%223%22 fill=%22%23E57000%22 opacity=%220.2%22/%3E%3Ctext x=%2248%22 y=%22123%22 font-family=%22monospace%22 font-size=%2210%22 fill=%22%23E57000%22%3E💻 VM 100 — GLPI%3C/text%3E%3Crect x=%2238%22 y=%22134%22 width=%22104%22 height=%2222%22 rx=%223%22 fill=%22%2310B981%22 opacity=%220.15%22/%3E%3Ctext x=%2248%22 y=%22149%22 font-family=%22monospace%22 font-size=%2210%22 fill=%22%2310B981%22%3E🔀 VM 101 — Router%3C/text%3E%3Crect x=%22160%22 y=%2256%22 width=%22420%22 height=%22148%22 rx=%224%22 fill=%22%23111827%22 stroke=%22%23E57000%22 stroke-width=%221%22/%3E%3Ctext x=%22175%22 y=%2278%22 font-family=%22monospace%22 font-size=%2212%22 fill=%22%23E57000%22 font-weight=%22bold%22%3EVM 100 — GLPI (Debian 12)%3C/text%3E%3Ccircle cx=%22395%22 cy=%2272%22 r=%225%22 fill=%22%2310B981%22/%3E%3Ctext x=%22405%22 y=%2277%22 font-family=%22monospace%22 font-size=%2210%22 fill=%22%2310B981%22%3Erunning%3C/text%3E%3Crect x=%22172%22 y=%2288%22 width=%22396%22 height=%228%22 rx=%222%22 fill=%22%23222%22/%3E%3Crect x=%22172%22 y=%2288%22 width=%22238%22 height=%228%22 rx=%222%22 fill=%22%2310B981%22 opacity=%220.7%22/%3E%3Ctext x=%22175%22 y=%22112%22 font-family=%22monospace%22 font-size=%2210%22 fill=%22%23aaa%22%3ECPU: 2 cores   RAM: 2048 MB   Disk: 32 GB%3C/text%3E%3Ctext x=%22175%22 y=%22128%22 font-family=%22monospace%22 font-size=%2210%22 fill=%22%23aaa%22%3EIP: 192.168.10.10 / VLAN 10%3C/text%3E%3Ctext x=%22175%22 y=%22144%22 font-family=%22monospace%22 font-size=%2210%22 fill=%22%23aaa%22%3EStack: Apache • MariaDB • PHP 8.2 • GLPI 10%3C/text%3E%3Ctext x=%22175%22 y=%22160%22 font-family=%22monospace%22 font-size=%2210%22 fill=%22%23aaa%22%3EPortail: http://glpi.local — Ticketing %2B CMDB%3C/text%3E%3Crect x=%22160%22 y=%22214%22 width=%22420%22 height=%22148%22 rx=%224%22 fill=%22%23111827%22 stroke=%22%2310B981%22 stroke-width=%221%22/%3E%3Ctext x=%22175%22 y=%22236%22 font-family=%22monospace%22 font-size=%2212%22 fill=%22%2310B981%22 font-weight=%22bold%22%3EVM 101 — Routeur inter-VLAN (Debian 12)%3C/text%3E%3Ccircle cx=%22420%22 cy=%22230%22 r=%225%22 fill=%22%2310B981%22/%3E%3Ctext x=%22430%22 y=%22235%22 font-family=%22monospace%22 font-size=%2210%22 fill=%22%2310B981%22%3Erunning%3C/text%3E%3Ctext x=%22175%22 y=%22258%22 font-family=%22monospace%22 font-size=%2210%22 fill=%22%23aaa%22%3EVLAN 10 — 192.168.10.0/24 (Serveurs)%3C/text%3E%3Ctext x=%22175%22 y=%22274%22 font-family=%22monospace%22 font-size=%2210%22 fill=%22%23aaa%22%3EVLAN 20 — 192.168.20.0/24 (Postes clients)%3C/text%3E%3Ctext x=%22175%22 y=%22290%22 font-family=%22monospace%22 font-size=%2210%22 fill=%22%23aaa%22%3EVLAN 30 — 192.168.30.0/24 (Admins)%3C/text%3E%3Ctext x=%22175%22 y=%22306%22 font-family=%22monospace%22 font-size=%2210%22 fill=%22%23aaa%22%3EInterface: eth0.10 eth0.20 eth0.30 (802.1Q)%3C/text%3E%3Ctext x=%22175%22 y=%22322%22 font-family=%22monospace%22 font-size=%2210%22 fill=%22%23aaa%22%3ERoutage: ip_forward=1 — règles iptables actives%3C/text%3E%3Ctext x=%22175%22 y=%22345%22 font-family=%22monospace%22 font-size=%2211%22 fill=%22%23E57000%22 font-weight=%22bold%22%3EGLPI ✓ accessible depuis VLAN 10, 20 et 30%3C/text%3E%3C/svg%3E'">
+            <div class="slide-img-open">⛶ Agrandir</div>
+          </div>
+        </div>
+        <div class="slide-info">
+          <div class="proj-num">Projet 05</div>
+          <h3 class="slide-title">Virtualisation Proxmox — GLPI &amp; Routage inter-VLAN</h3>
+          <div class="proj-objectif">
+            <span class="proj-obj-label">Objectif</span>
+            Déployer deux machines virtuelles sous Proxmox : un serveur GLPI pour la gestion de parc, et un routeur pour faire communiquer des VLANs entre eux.
+          </div>
+          <div class="proj-steps">
+            <div class="proj-step">
+              <span class="step-num">1</span>
+              <span>Installation de l'hyperviseur <strong>Proxmox VE</strong> sur serveur physique et création de deux VMs Debian</span>
+            </div>
+            <div class="proj-step">
+              <span class="step-num">2</span>
+              <span><strong>VM 1 — <span class="def-tag" data-def="GLPI est un logiciel open source de gestion de parc informatique et de ticketing. Il permet de gérer les incidents, les équipements, les utilisateurs et les licences d'une organisation.">GLPI</span></strong> : portail de ticketing et <span class="def-tag" data-def="CMDB (Configuration Management Database) : base de données qui recense tous les équipements informatiques d'une organisation (serveurs, postes, routeurs...) avec leurs caractéristiques et leurs liens.">CMDB</span> installé sur Debian avec Apache, MariaDB et PHP</span>
+            </div>
+            <div class="proj-step">
+              <span class="step-num">3</span>
+              <span><strong>VM 2 — Routeur</strong> : 3 <span class="def-tag" data-def="Un VLAN (Virtual LAN) isole les équipements en groupes logiques sur le même réseau physique. Ex : VLAN Serveurs, VLAN RH, VLAN Admins — ils ne communiquent pas entre eux sauf autorisation.">VLANs</span> configurés en 802.1Q, routage activé, règles iptables — GLPI accessible depuis tous les segments</span>
+            </div>
+          </div>
+          <div class="proj-resultat">Infrastructure virtualisée complète et fonctionnelle — ticketing + réseau segmenté opérationnels</div>
+          <div class="chip-row" style="margin-top:1.2rem">
+            <span class="chip def-tag" data-def="Proxmox VE est un hyperviseur open source gratuit. Il permet de créer et gérer des machines virtuelles depuis une interface web. Très utilisé en entreprise pour les serveurs.">Proxmox VE</span>
+            <span class="chip def-tag" data-def="GLPI est un logiciel open source de gestion de parc informatique. Il gère les équipements (CMDB), les incidents utilisateurs (ticketing) et les licences logicielles.">GLPI</span>
+            <span class="chip def-tag" data-def="VLAN 802.1Q : standard réseau qui permet de faire passer plusieurs VLANs sur un même câble physique (liaison trunk). Chaque paquet est étiqueté avec son identifiant VLAN.">VLAN 802.1Q</span>
+            <span class="chip def-tag" data-def="Debian est une distribution Linux stable et open source, très utilisée pour les serveurs. C'est la base d'Ubuntu Server.">Debian</span>
+            <span class="chip def-tag" data-def="iptables est le pare-feu intégré à Linux. Il filtre le trafic réseau en définissant des règles : autoriser, bloquer ou rediriger des connexions selon l'IP ou le port.">iptables</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="dots">
+      <span class="dot active" onclick="goToProject(0)"></span>
+      <span class="dot" onclick="goToProject(1)"></span>
+      <span class="dot" onclick="goToProject(2)"></span>
+      <span class="dot" onclick="goToProject(3)"></span>
+      <span class="dot" onclick="goToProject(4)"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ COMPÉTENCES ══ -->
+<section id="competences" class="section">
+  <div class="section-blob blob-left"></div>
+  <div class="wrap">
+    <h2 class="section-title">Compétences</h2>
+    <div class="section-bar"></div>
+
+    <div class="skills-grid">
+
+      <!-- Réseau -->
+      <div class="skill-cat glass reveal">
+        <div class="skill-cat-head">
+          <div class="skill-cat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M12 7v4M8.5 17.5l-2-2M15.5 17.5l2-2M12 11l-3.5 4.5M12 11l3.5 4.5"/></svg>
+          </div>
+          <div>
+            <p class="skill-cat-label">Réseau</p>
+          </div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag skill-tag-main" data-def="Cisco est le leader mondial des équipements réseau. En BTS SISR on apprend à configurer leurs routeurs et switches via leur logiciel de simulation Packet Tracer.">Cisco</span>
+          <span class="skill-tag" data-def="TCP/IP est le protocole de base d'Internet. TCP garantit que les données arrivent sans erreur, IP s'occupe de l'adressage et du routage des paquets entre les machines.">TCP/IP</span>
+          <span class="skill-tag" data-def="VLAN (Virtual LAN) : divise un réseau physique en plusieurs réseaux logiques isolés. Ex : VLAN Serveurs, VLAN Postes clients, VLAN Admins — ils ne communiquent pas entre eux sauf autorisation.">VLAN</span>
+          <span class="skill-tag" data-def="Le routage est le mécanisme qui permet de faire circuler des données entre différents réseaux. Un routeur lit l'adresse IP de destination et choisit le meilleur chemin pour y envoyer le paquet.">Routage</span>
+          <span class="skill-tag" data-def="ACL (Access Control List) : liste de règles qui autorise ou bloque du trafic réseau selon l'adresse IP source, destination ou le port. C'est le filtrage au niveau du routeur.">ACL</span>
+          <span class="skill-tag" data-def="Cisco Packet Tracer est un logiciel de simulation réseau. Il permet de créer des maquettes virtuelles avec des routeurs, switches et PCs sans matériel physique.">Packet Tracer</span>
+        </div>
+      </div>
+
+      <!-- Systèmes -->
+      <div class="skill-cat glass reveal">
+        <div class="skill-cat-head">
+          <div class="skill-cat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <div>
+            <p class="skill-cat-label">Systèmes</p>
+          </div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag skill-tag-main" data-def="Linux est un système d'exploitation open source très utilisé sur les serveurs. Il s'administre principalement en ligne de commande (terminal). Les distributions courantes en entreprise sont Debian, Ubuntu Server, et CentOS.">Linux</span>
+          <span class="skill-tag skill-tag-main" data-def="Windows Server est le système d'exploitation serveur de Microsoft. Il héberge les services réseau d'une entreprise : Active Directory, DNS, DHCP, partages de fichiers, IIS...">Windows Server</span>
+          <span class="skill-tag" data-def="Windows (10/11) est le système d'exploitation de bureau le plus répandu en entreprise. En SISR, on gère le parc de postes Windows : déploiement, configuration, application des GPO.">Windows</span>
+          <span class="skill-tag" data-def="Active Directory (AD) est l'annuaire centralisé de Microsoft. Il gère les utilisateurs, les machines et les droits d'accès. C'est le point central de l'authentification dans un réseau Windows.">Active Directory</span>
+          <span class="skill-tag" data-def="DNS traduit les noms de domaine en adresses IP (ex: serveur.local → 192.168.1.10). DHCP attribue automatiquement une adresse IP aux machines qui rejoignent le réseau.">DNS / DHCP</span>
+          <span class="skill-tag" data-def="GPO (Group Policy Object) : politique de groupe qui s'applique automatiquement aux utilisateurs ou machines dans l'Active Directory. Ex : imposer un fond d'écran, bloquer l'accès au panneau de configuration, forcer la complexité des mots de passe.">GPO</span>
+        </div>
+      </div>
+
+      <!-- Virtualisation -->
+      <div class="skill-cat glass reveal">
+        <div class="skill-cat-head">
+          <div class="skill-cat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3H8M12 3v4"/><rect x="6" y="11" width="4" height="3" rx="1"/><rect x="14" y="11" width="4" height="3" rx="1"/></svg>
+          </div>
+          <div>
+            <p class="skill-cat-label">Virtualisation</p>
+          </div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag skill-tag-main" data-def="Proxmox VE est un hyperviseur open source gratuit. Il permet de créer et gérer des machines virtuelles et des conteneurs (LXC) depuis une interface web. Très utilisé en entreprise pour les labs et serveurs.">Proxmox VE</span>
+          <span class="skill-tag skill-tag-main" data-def="VMware est le leader commercial de la virtualisation. VMware Workstation s'utilise sur un PC pour créer des VMs. VMware ESXi est la version serveur. Racheté par Broadcom en 2023.">VMware</span>
+          <span class="skill-tag" data-def="VirtualBox est un hyperviseur gratuit d'Oracle. Idéal pour créer des machines virtuelles sur un PC de bureau ou laptop, souvent utilisé en cours pour les travaux pratiques.">VirtualBox</span>
+          <span class="skill-tag" data-def="Debian est une distribution Linux stable et libre, très utilisée pour les serveurs. C'est la base d'Ubuntu. On l'utilise comme VM pour déployer des services (Apache, Nginx, MariaDB...).">Debian VM</span>
+        </div>
+      </div>
+
+      <!-- Scripting -->
+      <div class="skill-cat glass reveal">
+        <div class="skill-cat-head">
+          <div class="skill-cat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <div>
+            <p class="skill-cat-label">Scripting</p>
+          </div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag skill-tag-main" data-def="PowerShell est le langage de script Microsoft. Il permet d'automatiser l'administration Windows : créer des utilisateurs en masse dans l'AD, déployer des logiciels, gérer les services réseau par commandes.">PowerShell</span>
+          <span class="skill-tag" data-def="VBScript (Visual Basic Script) est un ancien langage de script Windows, encore présent dans certaines entreprises pour automatiser des tâches sur des systèmes plus anciens.">VBScript</span>
+          <span class="skill-tag" data-def="Bash est le shell de Linux. C'est le langage de script utilisé pour automatiser des tâches sur les serveurs Linux : sauvegardes automatiques, surveillance, déploiement de configurations.">Bash</span>
+          <span class="skill-tag" data-def="L'automatisation consiste à écrire des scripts pour exécuter des tâches répétitives sans intervention humaine. En SISR : créer 50 comptes utilisateurs en un script plutôt qu'un par un.">Automatisation</span>
+        </div>
+      </div>
+
+      <!-- Cybersécurité -->
+      <div class="skill-cat glass reveal">
+        <div class="skill-cat-head">
+          <div class="skill-cat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <p class="skill-cat-label">Cybersécurité</p>
+          </div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag skill-tag-main" data-def="Burp Suite est l'outil de référence pour tester la sécurité des applications web. Il intercepte les requêtes HTTP entre le navigateur et le serveur, permettant de les analyser et modifier pour détecter des vulnérabilités.">Burp Suite</span>
+          <span class="skill-tag" data-def="L'OWASP Top 10 est la liste des 10 vulnérabilités web les plus critiques établie par l'Open Web Application Security Project. C'est la référence mondiale en sécurité web, mise à jour régulièrement.">OWASP Top 10</span>
+          <span class="skill-tag" data-def="Le Pentest (test d'intrusion) consiste à attaquer un système avec l'autorisation de son propriétaire pour identifier ses failles avant qu'un vrai attaquant ne le fasse. On simule une attaque réelle de façon légale et encadrée.">Pentest</span>
+          <span class="skill-tag" data-def="SQLi (SQL Injection) : injection de code SQL malveillant dans un champ de saisie pour manipuler la base de données. XSS (Cross-Site Scripting) : injection de code JavaScript dans une page web pour voler des sessions utilisateurs.">SQLi / XSS</span>
+          <span class="skill-tag" data-def="CSRF (Cross-Site Request Forgery) : force un utilisateur connecté à exécuter une action à son insu. IDOR (Insecure Direct Object Reference) : accès non autorisé à des ressources en modifiant simplement un identifiant dans l'URL.">CSRF / IDOR</span>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div class="skill-cat glass reveal">
+        <div class="skill-cat-head">
+          <div class="skill-cat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+          </div>
+          <div>
+            <p class="skill-cat-label">Services &amp; Outils</p>
+          </div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag skill-tag-main" data-def="Nginx est un serveur web et proxy inverse très performant. Il sert des pages web, équilibre la charge entre plusieurs serveurs, ou joue le rôle de passerelle sécurisée devant une application.">Nginx</span>
+          <span class="skill-tag" data-def="Apache est le serveur web le plus utilisé au monde. Il héberge des sites et applications web (PHP, Python...). Souvent utilisé avec MariaDB et PHP pour faire tourner des applications comme GLPI.">Apache</span>
+          <span class="skill-tag" data-def="GLPI est un logiciel open source de gestion de parc informatique. Il permet de gérer les équipements (CMDB), les incidents utilisateurs (ticketing) et les licences logicielles d'une organisation.">GLPI</span>
+          <span class="skill-tag" data-def="LDAP (Lightweight Directory Access Protocol) : protocole qui permet de lire un annuaire comme l'Active Directory. SSO (Single Sign-On) : authentification unique — l'utilisateur se connecte une seule fois et accède à toutes ses applications sans ressaisir son mot de passe.">LDAP / SSO</span>
+          <span class="skill-tag" data-def="iptables est l'outil de pare-feu intégré à Linux. Il filtre le trafic réseau en définissant des règles : autoriser, bloquer ou rediriger des connexions selon l'IP source, destination, ou le port.">iptables</span>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="par-label" style="margin-top:3rem;margin-bottom:1.4rem">Certifications</p>
+    <div class="certs-row">
+
+      <!-- Cisco Cybersecurity -->
+      <div class="cert-card glass reveal">
+        <div class="cert-img">
+          <img src="icones/ciscocyber.png" alt="Cisco Cybersecurity">
+        </div>
+        <div class="cert-info">
+          <p class="cert-name">Cisco Cybersecurity</p>
+          <p class="cert-org">Cisco Networking Academy</p>
+          <span class="cert-badge">CERTIFIÉE</span>
+        </div>
+      </div>
+
+      <!-- My Academy -->
+      <div class="cert-card glass reveal">
+        <div class="cert-img cert-img-dark">
+          <div class="cert-myacademy">
+            <div class="cert-ma-logo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <p class="cert-ma-title">My Academy</p>
+            <p class="cert-ma-sub">by Mailinblack</p>
+          </div>
+        </div>
+        <div class="cert-info">
+          <p class="cert-name">Cybersécurité e-learning</p>
+          <p class="cert-org">My Academy — Mailinblack</p>
+          <div class="cert-footer-row">
+            <span class="cert-badge">CERTIFIÉE</span>
+            <a href="certificat_my_academy.pdf" target="_blank" class="cert-open-btn">Voir ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Prochaine -->
+      <div class="cert-card glass reveal">
+        <div class="cert-img cert-empty">+</div>
+        <div class="cert-info">
+          <p class="cert-name">Prochaine certification</p>
+          <p class="cert-org">À venir</p>
+          <span class="cert-badge cert-badge-soon">EN COURS</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ SYNTHÈSE ══ -->
+<section id="synthese" class="section">
+  <div class="section-blob blob-right"></div>
+  <div class="wrap">
+    <h2 class="section-title">Tableau de synthèse</h2>
+    <div class="section-bar"></div>
+    <div class="doc-card glass reveal">
+      <div class="doc-header">
+        <div class="doc-badge">TS</div>
+        <div>
+          <p class="doc-title">Tableau de synthèse — BTS SIO</p>
+          <p class="doc-sub">Compétences acquises · Projets réalisés · Bilan de formation</p>
+        </div>
+      </div>
+      <div class="doc-frame"><iframe src="tableau de synthese.pdf" title="Tableau de synthèse"></iframe></div>
+      <div class="doc-footer">
+        <a href="tableau de synthese.pdf" download class="btn-rose">Télécharger</a>
+        <a href="tableau de synthese.pdf" target="_blank" class="btn-outline">Ouvrir</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MON CV ══ -->
+<section id="cv" class="section">
+  <div class="wrap">
+    <h2 class="section-title">Mon CV</h2>
+    <div class="section-bar"></div>
+    <div class="doc-card glass reveal">
+      <div class="doc-header">
+        <div class="doc-badge">CV</div>
+        <div>
+          <p class="doc-title">Ibrahim Nadine — Curriculum Vitae</p>
+          <p class="doc-sub">BTS SIO SISR · Administration Systèmes &amp; Réseaux</p>
+        </div>
+      </div>
+      <div class="doc-frame"><iframe src="Ibrahim_Nadine_cv.pdf" title="CV"></iframe></div>
+      <div class="doc-footer">
+        <a href="Ibrahim_Nadine_cv.pdf" download class="btn-rose">Télécharger</a>
+        <a href="Ibrahim_Nadine_cv.pdf" target="_blank" class="btn-outline">Ouvrir</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ VEILLE ══ -->
+<section id="veille" class="section">
+  <div class="section-blob blob-left"></div>
+  <div class="wrap">
+    <h2 class="section-title">Veille technologique</h2>
+    <div class="section-bar"></div>
+    <p class="section-sub">Ransomwares &amp; Cyberattaques</p>
+
+    <div class="veille-header-row" style="display:flex;align-items:center;gap:1rem;margin-bottom:2rem;flex-wrap:wrap">
+      <p class="text-body" style="opacity:.6;font-size:.82rem;margin:0">Dernière mise à jour : <span id="veille-date-auto"></span></p>
+      <button id="veille-refresh" class="btn-outline" style="padding:.3rem .9rem;font-size:.8rem;display:flex;align-items:center;gap:.4rem">
+        <span id="veille-refresh-icon" style="display:inline-block;transition:transform .5s">↻</span> Actualiser
+      </button>
+    </div>
+
+    <div class="veille-tl" id="veille-tl">
+
+      <div class="veille-item reveal">
+        <div class="veille-dot"></div>
+        <div class="veille-card glass">
+          <span class="veille-date">Mars 2026</span>
+          <h3 class="veille-title">Handala pirate le Gmail de Kash Patel, directeur du FBI</h3>
+          <p class="text-body" style="margin:.5rem 0 .8rem">Le groupe pro-iranien Handala revendique le 27 mars 2026 l'intrusion dans le compte Gmail personnel du directeur du FBI nommé sous Trump. Des preuves sont publiées : emails de 2010-2019, photos personnelles. Le FBI confirme l'incident mais précise que les données n'ont pas d'impact sur la sécurité nationale. Cet incident illustre les risques du <strong>phishing</strong> et du <strong>credential stuffing</strong> même pour les hauts responsables, et l'importance de la séparation pro/perso avec un <strong>MFA</strong> renforcé.</p>
+          <div class="veille-links">
+            <a href="https://www.it-connect.fr" target="_blank" class="veille-link">IT Connect</a>
+            <a href="https://www.cert.ssi.gouv.fr" target="_blank" class="veille-link">CERT-FR</a>
+            <a href="https://www.lemonde.fr/pixels/" target="_blank" class="veille-link">Le Monde Pixels</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="veille-item reveal">
+        <div class="veille-dot"></div>
+        <div class="veille-card glass">
+          <span class="veille-date">2024 — 2026</span>
+          <h3 class="veille-title">RansomHub — Le groupe ransomware le plus actif en 2025</h3>
+          <div class="veille-links">
+            <a href="https://www.cert.ssi.gouv.fr" target="_blank" class="veille-link">CERT-FR</a>
+            <a href="https://www.ssi.gouv.fr" target="_blank" class="veille-link">ANSSI</a>
+            <a href="https://www.bleepingcomputer.com/ransomware/" target="_blank" class="veille-link">BleepingComputer</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="veille-item reveal">
+        <div class="veille-dot"></div>
+        <div class="veille-card glass">
+          <span class="veille-date">Février 2025</span>
+          <h3 class="veille-title">LockBit démantelé — Opération Cronos et ses suites</h3>
+          <div class="veille-links">
+            <a href="https://www.it-connect.fr" target="_blank" class="veille-link">IT Connect</a>
+            <a href="https://www.europol.europa.eu/media-press/newsroom" target="_blank" class="veille-link">Europol</a>
+            <a href="https://www.bleepingcomputer.com" target="_blank" class="veille-link">BleepingComputer</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="veille-item reveal">
+        <div class="veille-dot"></div>
+        <div class="veille-card glass">
+          <span class="veille-date">2024 — 2026</span>
+          <h3 class="veille-title">Hôpitaux &amp; infrastructures critiques — Cibles prioritaires</h3>
+          <div class="veille-links">
+            <a href="https://www.ssi.gouv.fr" target="_blank" class="veille-link">ANSSI</a>
+            <a href="https://www.it-connect.fr" target="_blank" class="veille-link">IT Connect</a>
+            <a href="https://www.zdnet.fr/actualites/securite/" target="_blank" class="veille-link">ZDNet France</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="veille-item reveal">
+        <div class="veille-dot"></div>
+        <div class="veille-card glass">
+          <span class="veille-date">Continu — 2026</span>
+          <h3 class="veille-title">Se défendre : sauvegardes, segmentation réseau &amp; EDR</h3>
+          <div class="veille-links">
+            <a href="https://www.ssi.gouv.fr/guide/les-bons-reflexes-en-cas-dintrusion-sur-un-systeme-dinformation/" target="_blank" class="veille-link">Guide ANSSI</a>
+            <a href="https://nvd.nist.gov" target="_blank" class="veille-link">NVD — NIST</a>
+            <a href="https://www.cybermalveillance.gouv.fr" target="_blank" class="veille-link">Cybermalveillance.gouv</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section id="contact" class="section">
+  <div class="section-blob blob-left"></div>
+  <div class="wrap">
+    <h2 class="section-title">Contact</h2>
+    <div class="section-bar"></div>
+    <p class="section-sub">Une question ? Un projet ? Écrivez-moi directement.</p>
+
+    <div class="contact-grid">
+
+      <!-- Infos -->
+      <div class="contact-info-col reveal">
+        <p class="contact-tagline">Disponible pour une alternance,<br>un stage ou une opportunité.</p>
+        <div class="contact-list" style="margin-top:2rem">
+          <div class="contact-item glass">
+            <div class="contact-ico">@</div>
+            <div><p class="contact-label">Email</p><a href="mailto:n.ibrahim@ecole-ipssi.net">n.ibrahim@ecole-ipssi.net</a></div>
+          </div>
+        </div>
+        <div class="contact-deco">
+          <div class="contact-deco-ring"></div>
+          <div class="contact-deco-ring contact-deco-ring-2"></div>
+        </div>
+      </div>
+
+      <!-- Formulaire -->
+      <div class="contact-form-col reveal">
+        <div class="contact-form-card glass" id="contactFormWrap">
+
+          <!-- Formulaire principal -->
+          <form id="contactForm" class="contact-form" novalidate>
+            <div class="cf-row">
+              <div class="cf-field">
+                <label class="cf-label" for="cf-name">Votre nom</label>
+                <input class="cf-input" id="cf-name" name="name" type="text" placeholder="Nadine Ibrahim" autocomplete="name" required>
+              </div>
+              <div class="cf-field">
+                <label class="cf-label" for="cf-email">Votre email</label>
+                <input class="cf-input" id="cf-email" name="email" type="email" placeholder="vous@exemple.com" autocomplete="email" required>
+              </div>
+            </div>
+            <div class="cf-field">
+              <label class="cf-label" for="cf-subject">Objet</label>
+              <input class="cf-input" id="cf-subject" name="subject" type="text" placeholder="Ex : Proposition d'alternance" required>
+            </div>
+            <div class="cf-field">
+              <label class="cf-label" for="cf-message">Message</label>
+              <textarea class="cf-input cf-textarea" id="cf-message" name="message" placeholder="Bonjour Nadine, je souhaitais…" required></textarea>
+            </div>
+            <div class="cf-error" id="cfError"></div>
+            <button class="btn-rose cf-submit" type="submit" id="cfSubmit">
+              <span class="cf-btn-txt">Envoyer le message</span>
+              <span class="cf-btn-icon">→</span>
+              <span class="cf-btn-loader" aria-hidden="true"></span>
+            </button>
+          </form>
+
+          <!-- État succès -->
+          <div class="cf-success" id="cfSuccess">
+            <div class="cf-success-icon">
+              <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle class="cf-check-circle" cx="26" cy="26" r="24" stroke="url(#cg)" stroke-width="2.5"/>
+                <path class="cf-check-tick" d="M15 27l8 8 14-16" stroke="url(#cg2)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <defs>
+                  <linearGradient id="cg" x1="0" y1="0" x2="52" y2="52" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#c2185b"/><stop offset="1" stop-color="#a855f7"/>
+                  </linearGradient>
+                  <linearGradient id="cg2" x1="14" y1="26" x2="38" y2="26" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#e879a0"/><stop offset="1" stop-color="#d8b4fe"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <h3 class="cf-success-title">Message envoyé !</h3>
+            <p class="cf-success-msg">Merci pour votre message. Je vous répondrai dans les plus brefs délais.</p>
+            <button class="btn-outline cf-reset" id="cfReset">Envoyer un autre message</button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- TOOLTIP DÉFINITION -->
+<div id="def-tooltip" class="def-tooltip-box" style="display:none"></div>
+
+<button id="scrollTop" aria-label="Retour en haut">↑</button>
+
+<script src="script.js"></script>
+<script>
+/* ── DATE VEILLE AUTO ── */
+function updateVeilleDate() {
+  var el = document.getElementById('veille-date-auto');
+  if (!el) return;
+  var d = new Date();
+  var months = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+  el.textContent = d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear()
+    + ' à ' + String(d.getHours()).padStart(2,'0') + ':' + String(d.getMinutes()).padStart(2,'0');
+}
+updateVeilleDate();
+
+/* ── BOUTON ACTUALISER ── */
+(function () {
+  var btn  = document.getElementById('veille-refresh');
+  var icon = document.getElementById('veille-refresh-icon');
+  if (!btn) return;
+  btn.addEventListener('click', function () {
+    icon.style.transition = 'transform .5s';
+    icon.style.transform  = 'rotate(360deg)';
+    setTimeout(function () { icon.style.transition = 'none'; icon.style.transform = 'rotate(0deg)'; }, 520);
+    updateVeilleDate();
+    document.querySelectorAll('.veille-card').forEach(function (c) {
+      c.style.transition = 'opacity .15s';
+      c.style.opacity = '.4';
+      setTimeout(function () { c.style.opacity = '1'; }, 200);
+    });
+  });
+})();
+
+/* ── TOOLTIPS UNIFIÉS ── */
+(function () {
+  var tip = document.getElementById('def-tooltip');
+  if (!tip) return;
+  var current = null;
+
+  function showTip(el, e) {
+    e.stopPropagation();
+    if (current === el && tip.style.display !== 'none') { tip.style.display = 'none'; current = null; return; }
+    current = el;
+    tip.innerHTML = '<strong style="display:block;margin-bottom:.35rem;color:var(--rose3)">' + el.textContent.trim() + '</strong>'
+                  + '<span style="color:var(--txt2);line-height:1.5">' + (el.dataset.def || '') + '</span>';
+    tip.style.display = 'block';
+    position(el);
+  }
+
+  function position(el) {
+    var r = el.getBoundingClientRect();
+    var tw = Math.min(300, window.innerWidth - 24);
+    var left = Math.max(12, Math.min(r.left + r.width / 2 - tw / 2, window.innerWidth - tw - 12));
+    var top  = r.bottom + 10 + window.scrollY;
+    if (r.bottom + 150 > window.innerHeight) top = r.top - 160 + window.scrollY;
+    tip.style.left = left + 'px'; tip.style.top = top + 'px'; tip.style.width = tw + 'px';
+  }
+
+  document.querySelectorAll('.def-tag[data-def], .skill-tag[data-def]').forEach(function (el) {
+    el.style.cursor = 'pointer';
+    el.addEventListener('click', function (e) { showTip(el, e); });
+  });
+  document.addEventListener('click', function () { tip.style.display = 'none'; current = null; });
+  window.addEventListener('scroll', function () { if (current && tip.style.display !== 'none') position(current); }, { passive: true });
+})();
+</script>
+</body>
+</html>
