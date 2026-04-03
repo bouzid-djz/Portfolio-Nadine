@@ -678,75 +678,69 @@
   <div class="wrap">
     <h2 class="section-title">Veille technologique</h2>
     <div class="section-bar"></div>
-    <p class="section-sub">Ransomwares &amp; Cyberattaques</p>
-    <div class="veille-header-row" style="display:flex;align-items:center;gap:1rem;margin-bottom:2rem;flex-wrap:wrap">
-      <p class="text-body" style="opacity:.6;font-size:.82rem;margin:0">Dernière mise à jour : <span id="veille-date-auto"></span></p>
-      <button id="veille-refresh" class="btn-outline" style="padding:.3rem .9rem;font-size:.8rem;display:flex;align-items:center;gap:.4rem">
-        <span id="veille-refresh-icon" style="display:inline-block;transition:transform .5s">↻</span> Actualiser
-      </button>
+    <p class="section-sub">Je maintiens une veille technologique active centrée sur la cybersécurité, l'administration réseau et les nouvelles technologies IT pour rester à jour sur les menaces, outils et bonnes pratiques.</p>
+
+    <!-- Thèmes surveillés -->
+    <p class="par-label" style="margin-bottom:1rem">Thèmes surveillés</p>
+    <div class="chip-row reveal" style="margin-bottom:3rem">
+      <span class="chip">Cybersécurité (vulnérabilités, ransomware, MFA)</span>
+      <span class="chip">Administration système (Windows Server, Active Directory, PowerShell)</span>
+      <span class="chip">Nouvelles technologies IT</span>
     </div>
-    <div class="veille-tl" id="veille-tl">
-      <div class="veille-item reveal">
-        <div class="veille-dot"></div>
-        <div class="veille-card glass">
-          <span class="veille-date">Mars 2026</span>
-          <h3 class="veille-title">Handala pirate le Gmail de Kash Patel, directeur du FBI</h3>
-          <p class="text-body" style="margin:.5rem 0 .8rem">Le groupe pro-iranien Handala revendique le 27 mars 2026 l'intrusion dans le compte Gmail personnel du directeur du FBI nommé sous Trump. Des preuves sont publiées : emails de 2010-2019, photos personnelles. Le FBI confirme l'incident mais précise que les données n'ont pas d'impact sur la sécurité nationale. Cet incident illustre les risques du <strong>phishing</strong> et du <strong>credential stuffing</strong> même pour les hauts responsables, et l'importance de la séparation pro/perso avec un <strong>MFA</strong> renforcé.</p>
-          <div class="veille-links">
-            <a href="https://www.it-connect.fr" target="_blank" class="veille-link">IT Connect</a>
-            <a href="https://www.cert.ssi.gouv.fr" target="_blank" class="veille-link">CERT-FR</a>
-            <a href="https://www.lemonde.fr/pixels/" target="_blank" class="veille-link">Le Monde Pixels</a>
+
+    <!-- Sources -->
+    <p class="par-label" style="margin-bottom:1.4rem">Sources utilisées</p>
+    <div class="veille-sources-grid reveal">
+
+      <!-- Google Alertes -->
+      <div class="vsource-card glass">
+        <div class="vsource-head">
+          <div class="vsource-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          </div>
+          <div class="vsource-meta">
+            <p class="vsource-name">Google Alertes</p>
+            <span class="vsource-type">Alertes automatiques</span>
           </div>
         </div>
+        <p class="vsource-desc">Service Google qui envoie automatiquement des notifications par email dès qu'un nouveau contenu correspondant à mes mots-clés (ransomware, cybersécurité, Windows Server…) est indexé sur le web.</p>
+        <a href="https://alerts.google.com" target="_blank" rel="noopener" class="vsource-link">Visiter ↗</a>
       </div>
-      <div class="veille-item reveal">
-        <div class="veille-dot"></div>
-        <div class="veille-card glass">
-          <span class="veille-date">2024 — 2026</span>
-          <h3 class="veille-title">RansomHub — Le groupe ransomware le plus actif en 2025</h3>
-          <div class="veille-links">
-            <a href="https://www.cert.ssi.gouv.fr" target="_blank" class="veille-link">CERT-FR</a>
-            <a href="https://www.ssi.gouv.fr" target="_blank" class="veille-link">ANSSI</a>
-            <a href="https://www.bleepingcomputer.com/ransomware/" target="_blank" class="veille-link">BleepingComputer</a>
+
+      <!-- IT-Connect -->
+      <div class="vsource-card glass">
+        <div class="vsource-head">
+          <div class="vsource-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1" fill="currentColor"/></svg>
+          </div>
+          <div class="vsource-meta">
+            <p class="vsource-name">IT-Connect</p>
+            <span class="vsource-type">Site web</span>
           </div>
         </div>
+        <p class="vsource-desc">Site de référence francophone dédié à l'administration systèmes et réseaux. Tutoriels détaillés, actualités cybersécurité, guides pratiques sur Windows Server, Linux, Active Directory et les infrastructures réseau.</p>
+        <a href="https://www.it-connect.fr" target="_blank" rel="noopener" class="vsource-link">Visiter ↗</a>
       </div>
-      <div class="veille-item reveal">
-        <div class="veille-dot"></div>
-        <div class="veille-card glass">
-          <span class="veille-date">Février 2025</span>
-          <h3 class="veille-title">LockBit démantelé — Opération Cronos et ses suites</h3>
-          <div class="veille-links">
-            <a href="https://www.it-connect.fr" target="_blank" class="veille-link">IT Connect</a>
-            <a href="https://www.europol.europa.eu/media-press/newsroom" target="_blank" class="veille-link">Europol</a>
-            <a href="https://www.bleepingcomputer.com" target="_blank" class="veille-link">BleepingComputer</a>
+
+      <!-- Réseaux sociaux -->
+      <div class="vsource-card glass">
+        <div class="vsource-head">
+          <div class="vsource-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          </div>
+          <div class="vsource-meta">
+            <p class="vsource-name">Réseaux sociaux</p>
+            <span class="vsource-type">Communautés</span>
           </div>
         </div>
-      </div>
-      <div class="veille-item reveal">
-        <div class="veille-dot"></div>
-        <div class="veille-card glass">
-          <span class="veille-date">2024 — 2026</span>
-          <h3 class="veille-title">Hôpitaux &amp; infrastructures critiques — Cibles prioritaires</h3>
-          <div class="veille-links">
-            <a href="https://www.ssi.gouv.fr" target="_blank" class="veille-link">ANSSI</a>
-            <a href="https://www.it-connect.fr" target="_blank" class="veille-link">IT Connect</a>
-            <a href="https://www.zdnet.fr/actualites/securite/" target="_blank" class="veille-link">ZDNet France</a>
-          </div>
+        <p class="vsource-desc">Suivi de comptes spécialisés en cybersécurité et IT sur LinkedIn, X (Twitter) et Reddit. Les communautés et experts partagent en temps réel les dernières failles, outils et bonnes pratiques du secteur.</p>
+        <div class="vsource-platforms">
+          <span class="chip">LinkedIn</span>
+          <span class="chip">X / Twitter</span>
+          <span class="chip">Reddit</span>
         </div>
       </div>
-      <div class="veille-item reveal">
-        <div class="veille-dot"></div>
-        <div class="veille-card glass">
-          <span class="veille-date">Continu — 2026</span>
-          <h3 class="veille-title">Se défendre : sauvegardes, segmentation réseau &amp; EDR</h3>
-          <div class="veille-links">
-            <a href="https://www.ssi.gouv.fr/guide/les-bons-reflexes-en-cas-dintrusion-sur-un-systeme-dinformation/" target="_blank" class="veille-link">Guide ANSSI</a>
-            <a href="https://nvd.nist.gov" target="_blank" class="veille-link">NVD — NIST</a>
-            <a href="https://www.cybermalveillance.gouv.fr" target="_blank" class="veille-link">Cybermalveillance.gouv</a>
-          </div>
-        </div>
-      </div>
+
     </div>
   </div>
 </section>
@@ -834,33 +828,6 @@
 
 <script src="script.js"></script>
 <script>
-function updateVeilleDate() {
-  var el = document.getElementById('veille-date-auto');
-  if (!el) return;
-  var d = new Date();
-  var months = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
-  el.textContent = d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear()
-    + ' à ' + String(d.getHours()).padStart(2,'0') + ':' + String(d.getMinutes()).padStart(2,'0');
-}
-updateVeilleDate();
-
-(function () {
-  var btn  = document.getElementById('veille-refresh');
-  var icon = document.getElementById('veille-refresh-icon');
-  if (!btn) return;
-  btn.addEventListener('click', function () {
-    icon.style.transition = 'transform .5s';
-    icon.style.transform  = 'rotate(360deg)';
-    setTimeout(function () { icon.style.transition = 'none'; icon.style.transform = 'rotate(0deg)'; }, 520);
-    updateVeilleDate();
-    document.querySelectorAll('.veille-card').forEach(function (c) {
-      c.style.transition = 'opacity .15s';
-      c.style.opacity = '.4';
-      setTimeout(function () { c.style.opacity = '1'; }, 200);
-    });
-  });
-})();
-
 (function () {
   var tip = document.getElementById('def-tooltip');
   if (!tip) return;
