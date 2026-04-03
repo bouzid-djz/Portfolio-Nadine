@@ -8,3 +8,496 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
+<body>
+
+  <!-- ══════════════════════════════════════
+       CURSOR + PROGRESS + LOADER
+  ══════════════════════════════════════ -->
+  <div id="loader">
+    <div class="loader-content">
+      <div class="loader-logo">NI</div>
+      <p class="loader-name">Nadine Ibrahim</p>
+      <div class="loader-bar-wrap"><div class="loader-bar" id="loaderBar"></div></div>
+      <span class="loader-status" id="loaderStatus">Initialisation...</span>
+    </div>
+  </div>
+
+  <div id="scroll-progress"></div>
+  <div id="cursor-outer"></div>
+  <div id="cursor-inner"></div>
+
+  <!-- ══════════════════════════════════════
+       HEADER / NAV
+  ══════════════════════════════════════ -->
+  <header id="site-header" class="glass">
+    <div class="wrap nav-wrap">
+      <a href="#hero" class="logo-link" aria-label="Retour en haut">
+        <div class="logo-badge">NI</div>
+        <div class="logo-stack">
+          <span class="logo-name">Nadine Ibrahim</span>
+          <span class="logo-role">BTS SIO • SISR</span>
+        </div>
+      </a>
+
+      <button class="burger" id="burgerBtn" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="navMenu">
+        <ul>
+          <li><a href="#hero"        class="nav-link active">Accueil</a></li>
+          <li><a href="#about"       class="nav-link">Profil</a></li>
+          <li><a href="#formations"  class="nav-link">Formation</a></li>
+          <li><a href="#skills"      class="nav-link">Compétences</a></li>
+          <li><a href="#projets"     class="nav-link">Projets</a></li>
+          <li><a href="#experience"  class="nav-link">Stages</a></li>
+          <li><a href="#certifs"     class="nav-link">Certifications</a></li>
+          <li><a href="#veille"      class="nav-link">Veille</a></li>
+          <li><a href="#contact"     class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════
+       HERO
+  ══════════════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-noise"></div>
+    <div class="hero-orb orb-1"></div>
+    <div class="hero-orb orb-2"></div>
+    <div class="hero-scanline"></div>
+
+    <div class="wrap hero-wrap">
+      <div class="hero-left reveal">
+        <span class="eyebrow">Portfolio • BTS SIO option SISR</span>
+        <h1>Nadine Ibrahim</h1>
+        <p class="hero-role">Étudiante en <strong>cybersécurité</strong>, réseaux et systèmes</p>
+        <p class="hero-desc">
+          Actuellement en BTS SIO spécialité SISR, je construis mon parcours autour de la sécurité des infrastructures,
+          de l’administration réseau et de la protection des systèmes d’information.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projets" class="btn-primary magnetic">Voir mes projets</a>
+          <a href="#contact" class="btn-outline magnetic">Me contacter</a>
+        </div>
+
+        <div class="hero-mini-stats">
+          <div class="mini-card glass tilt">
+            <span class="mini-num" data-target="3">0</span>
+            <span class="mini-label">Projets</span>
+          </div>
+          <div class="mini-card glass tilt">
+            <span class="mini-num" data-target="4">0</span>
+            <span class="mini-label">Certifications</span>
+          </div>
+          <div class="mini-card glass tilt">
+            <span class="mini-num" data-target="2">0</span>
+            <span class="mini-label">Stages</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right reveal delay-2">
+        <div class="avatar-shell glass tilt">
+          <div class="avatar-ring"></div>
+          <img src="https://i.postimg.cc/FFbzBfFj/Whats-App-Image-2025-09-25-at-20-19-08.jpg"
+               alt="Photo de Nadine Ibrahim" class="avatar-img">
+          <div class="avatar-badge badge-top">SISR</div>
+          <div class="avatar-badge badge-bottom">Cybersécurité</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PROFIL ══ -->
+  <section id="about" class="section section-alt">
+    <div class="section-blob blob-right"></div>
+    <div class="wrap about-grid">
+      <div class="about-visual reveal">
+        <div class="about-card glass tilt">
+          <div class="about-card-top">
+            <span class="status-dot"></span>
+            <span class="status-text">Disponible pour une alternance</span>
+          </div>
+          <p class="about-intro">Passionnée par l’univers du <strong>cyber</strong>, des réseaux et de l’administration systèmes.</p>
+          <div class="about-metrics">
+            <div><strong>IPSSI</strong><span>École d’informatique</span></div>
+            <div><strong>SISR</strong><span>Réseaux & sécurité</span></div>
+            <div><strong>2025–2026</strong><span>En cours</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-text reveal delay-2">
+        <h2 class="section-title">Profil</h2>
+        <div class="section-bar"></div>
+        <p class="section-sub">Étudiante motivée, curieuse et orientée pratique.</p>
+        <p class="text-body">
+          Mon objectif est de poursuivre dans la cybersécurité en développant des compétences solides en durcissement,
+          supervision, segmentation réseau, gestion des incidents et protection des services critiques.
+        </p>
+        <p class="text-body">
+          J’aime comprendre le fonctionnement des systèmes, anticiper les vulnérabilités et mettre en place des solutions
+          fiables, documentées et adaptées au contexte métier.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FORMATIONS ══ -->
+  <section id="formations" class="section">
+    <div class="section-blob blob-left"></div>
+    <div class="wrap">
+      <h2 class="section-title">Formation</h2>
+      <div class="section-bar"></div>
+      <p class="section-sub">Mon parcours académique en informatique et sécurité.</p>
+
+      <div class="timeline">
+        <article class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass tilt">
+            <span class="timeline-date">2025 — 2026</span>
+            <h3>BTS SIO — Option SISR</h3>
+            <p>IPSSI Paris</p>
+            <span class="timeline-chip">Solutions d’infrastructure, systèmes et réseaux</span>
+          </div>
+        </article>
+
+        <article class="timeline-item reveal delay-2">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass tilt">
+            <span class="timeline-date">2024 — 2025</span>
+            <h3>Formation préparatoire en informatique</h3>
+            <p>Découverte des bases réseaux, systèmes et cybersécurité.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ COMPÉTENCES ══ -->
+  <section id="skills" class="section section-alt">
+    <div class="section-blob blob-right"></div>
+    <div class="wrap">
+      <h2 class="section-title">Compétences</h2>
+      <div class="section-bar"></div>
+      <p class="section-sub">Des bases solides pour évoluer dans l’administration et la sécurité.</p>
+
+      <div class="skills-grid">
+        <div class="skill-card glass reveal tilt">
+          <h3>Administration systèmes</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Windows Server</span>
+            <span class="skill-tag">Linux</span>
+            <span class="skill-tag">Active Directory</span>
+          </div>
+        </div>
+        <div class="skill-card glass reveal delay-2 tilt">
+          <h3>Réseaux</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">TCP/IP</span>
+            <span class="skill-tag">VLAN</span>
+            <span class="skill-tag">DNS / DHCP</span>
+          </div>
+        </div>
+        <div class="skill-card glass reveal delay-3 tilt">
+          <h3>Cybersécurité</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Hardening</span>
+            <span class="skill-tag">Veille</span>
+            <span class="skill-tag">Analyse de risques</span>
+          </div>
+        </div>
+        <div class="skill-card glass reveal tilt">
+          <h3>Outils</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">VirtualBox</span>
+            <span class="skill-tag">Packet Tracer</span>
+            <span class="skill-tag">Wireshark</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PROJETS ══ -->
+  <section id="projets" class="section">
+    <div class="section-blob blob-left"></div>
+    <div class="wrap">
+      <h2 class="section-title">Projets</h2>
+      <div class="section-bar"></div>
+      <p class="section-sub">Quelques réalisations autour des systèmes, réseaux et de la sécurité.</p>
+
+      <div class="projects-grid">
+        <article class="project-card glass reveal tilt">
+          <div class="project-topline">
+            <span class="project-type">Infrastructure</span>
+          </div>
+          <h3>Mise en place d’un environnement Active Directory</h3>
+          <p>Déploiement d’un domaine, gestion des utilisateurs, GPO et organisation des ressources.</p>
+        </article>
+
+        <article class="project-card glass reveal delay-2 tilt">
+          <div class="project-topline">
+            <span class="project-type">Réseau</span>
+          </div>
+          <h3>Segmentation réseau et sécurisation</h3>
+          <p>Conception d’une architecture logique avec VLAN, règles de filtrage et documentation technique.</p>
+        </article>
+
+        <article class="project-card glass reveal delay-3 tilt">
+          <div class="project-topline">
+            <span class="project-type">Cyber</span>
+          </div>
+          <h3>Veille cybersécurité</h3>
+          <p>Analyse de campagnes ransomware, suivi de vulnérabilités et synthèse des menaces émergentes.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ EXPÉRIENCE ══ -->
+  <section id="experience" class="section section-alt">
+    <div class="section-blob blob-right"></div>
+    <div class="wrap">
+      <h2 class="section-title">Stages</h2>
+      <div class="section-bar"></div>
+      <p class="section-sub">Expériences professionnelles et immersion terrain.</p>
+
+      <div class="timeline">
+        <article class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass tilt">
+            <span class="timeline-date">2025</span>
+            <h3>Stage en support / infrastructure</h3>
+            <p>Découverte de l’environnement IT, assistance technique et premiers réflexes de documentation.</p>
+          </div>
+        </article>
+
+        <article class="timeline-item reveal delay-2">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass tilt">
+            <span class="timeline-date">2024</span>
+            <h3>Observation en contexte informatique</h3>
+            <p>Approche des usages pro, de la maintenance et de l’organisation des systèmes d’information.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CERTIFICATIONS ══ -->
+  <section id="certifs" class="section">
+    <div class="section-blob blob-left"></div>
+    <div class="wrap">
+      <h2 class="section-title">Certifications</h2>
+      <div class="section-bar"></div>
+      <p class="section-sub">Une progression continue via l’autoformation et la validation de compétences.</p>
+
+      <div class="cert-grid">
+        <div class="cert-card glass reveal tilt">
+          <span class="cert-pill">Cisco</span>
+          <h3>Introduction to Cybersecurity</h3>
+        </div>
+        <div class="cert-card glass reveal delay-2 tilt">
+          <span class="cert-pill">ANSSI</span>
+          <h3>Mooc SecNumacadémie</h3>
+        </div>
+        <div class="cert-card glass reveal delay-3 tilt">
+          <span class="cert-pill">PIX</span>
+          <h3>Compétences numériques</h3>
+        </div>
+        <div class="cert-card glass reveal tilt">
+          <span class="cert-pill">Réseaux</span>
+          <h3>Initiation aux fondamentaux</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="veille" class="section">
+  <div class="section-blob blob-left"></div>
+  <div class="wrap">
+    <h2 class="section-title">Veille technologique</h2>
+    <div class="section-bar"></div>
+    <p class="section-sub">Flux live &amp; actualités cybersécurité</p>
+
+    <!-- Bandeau intro sources -->
+    <div class="veille-intro reveal">
+      <div class="veille-sources-strip">
+        <div class="veille-source-tag">
+          <span class="vst-icon">🛡️</span>
+          <span>CERT-FR</span>
+        </div>
+        <div class="veille-source-tag">
+          <span class="vst-icon">📡</span>
+          <span>ANSSI</span>
+        </div>
+        <div class="veille-source-tag">
+          <span class="vst-icon">🔍</span>
+          <span>IT-Connect</span>
+        </div>
+        <div class="veille-source-tag">
+          <span class="vst-icon">⚡</span>
+          <span>The Hacker News</span>
+        </div>
+        <div class="veille-source-tag">
+          <span class="vst-icon">🔒</span>
+          <span>BleepingComputer</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grille principale : épinglés + flux live -->
+    <div class="veille-grid">
+
+      <!-- Colonne gauche : articles épinglés -->
+      <div class="veille-pinned-col">
+        <div class="veille-col-header reveal">
+          <span class="veille-col-icon">📌</span>
+          <span>Sujets suivis</span>
+        </div>
+
+        <div class="veille-pin-card glass reveal">
+          <div class="vpin-cat">Ransomware</div>
+          <h3 class="veille-title">RansomHub — Groupe le plus actif en 2025</h3>
+          <p class="text-body" style="font-size:.84rem;margin:.5rem 0 .9rem;color:var(--txt2)">Émergé fin 2023, RansomHub a dépassé LockBit en volume d'attaques. Modèle Raas, double extorsion, cibles critiques.</p>
+          <div class="vpin-tags">
+            <span class="vtag">Double extorsion</span>
+            <span class="vtag">RaaS</span>
+          </div>
+          <div class="veille-links">
+            <a href="https://www.cert.ssi.gouv.fr" target="_blank" class="veille-link">CERT-FR</a>
+            <a href="https://www.bleepingcomputer.com/ransomware/" target="_blank" class="veille-link">BleepingComputer</a>
+          </div>
+        </div>
+
+        <div class="veille-pin-card glass reveal">
+          <div class="vpin-cat">Opération internationale</div>
+          <h3 class="veille-title">Opération Cronos — Démantèlement de LockBit</h3>
+          <p class="text-body" style="font-size:.84rem;margin:.5rem 0 .9rem;color:var(--txt2)">Fév. 2025 : Europol, FBI, NCA coordonnent la saisie de l'infrastructure LockBit. Arrestations, serveurs démantelés.</p>
+          <div class="vpin-tags">
+            <span class="vtag">Europol</span>
+            <span class="vtag">FBI</span>
+          </div>
+          <div class="veille-links">
+            <a href="https://www.europol.europa.eu/media-press/newsroom" target="_blank" class="veille-link">Europol</a>
+            <a href="https://www.it-connect.fr" target="_blank" class="veille-link">IT-Connect</a>
+          </div>
+        </div>
+
+        <div class="veille-pin-card glass reveal">
+          <div class="vpin-cat">Ingénierie sociale</div>
+          <h3 class="veille-title">Credential stuffing sur Gmail du directeur du FBI</h3>
+          <p class="text-body" style="font-size:.84rem;margin:.5rem 0 .9rem;color:var(--txt2)">Mars 2026 : le groupe Handala revendique l'accès au compte Gmail de Kash Patel via phishing et réutilisation de mots de passe.</p>
+          <div class="vpin-tags">
+            <span class="vtag">Phishing</span>
+            <span class="vtag">MFA</span>
+          </div>
+          <div class="veille-links">
+            <a href="https://www.lemonde.fr/pixels/" target="_blank" class="veille-link">Le Monde</a>
+            <a href="https://www.cert.ssi.gouv.fr" target="_blank" class="veille-link">CERT-FR</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Colonne droite : flux live Hacker News -->
+      <div class="veille-feed-col">
+        <div class="veille-col-header reveal">
+          <span class="veille-col-icon">⚡</span>
+          <span>Flux live — Hacker News</span>
+          <div class="vfeed-live-badge">
+            <span class="vfeed-dot"></span>Live
+          </div>
+          <button id="hn-refresh" class="hn-refresh-btn" title="Actualiser">↻</button>
+        </div>
+
+        <div id="hn-feed" class="hn-feed glass reveal">
+          <div class="hn-loading">
+            <div class="hn-spinner"></div>
+            <span>Chargement du flux…</span>
+          </div>
+        </div>
+
+        <p class="veille-feed-note reveal">
+          Données en direct via l'API publique Hacker News (Firebase). Cliquez sur un titre pour accéder à l'article.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section id="contact" class="section">
+  <div class="section-blob blob-left"></div>
+  <div class="wrap">
+    <h2 class="section-title">Contact</h2>
+    <div class="section-bar"></div>
+    <p class="section-sub">Une question ? Un projet ? Écrivez-moi directement.</p>
+
+    <div class="contact-grid">
+
+      <!-- Infos -->
+      <div class="contact-info-col reveal">
+        <p class="contact-tagline">Disponible pour une alternance,<br>un stage ou une opportunité.</p>
+        <div class="contact-list" style="margin-top:2rem">
+          <div class="contact-item glass">
+            <div class="contact-ico">@</div>
+            <div><p class="contact-label">Email</p><a href="mailto:n.ibrahim@ecole-ipssi.net">n.ibrahim@ecole-ipssi.net</a></div>
+          </div>
+        </div>
+        <div class="contact-deco">
+          <div class="contact-deco-ring"></div>
+          <div class="contact-deco-ring contact-deco-ring-2"></div>
+        </div>
+      </div>
+
+      <!-- Formulaire -->
+      <div class="contact-form-col reveal">
+        <div class="contact-form-card glass" id="contactFormWrap">
+
+          <!-- Formulaire principal -->
+          <form id="contactForm" class="contact-form" novalidate>
+            <div class="cf-row">
+              <div class="cf-field">
+                <label class="cf-label" for="cf-name">Votre nom</label>
+                <input class="cf-input" id="cf-name" name="name" type="text" placeholder="Nadine Ibrahim" autocomplete="name" required>
+              </div>
+              <div class="cf-field">
+                <label class="cf-label" for="cf-email">Votre email</label>
+                <input class="cf-input" id="cf-email" name="email" type="email" placeholder="vous@exemple.com" autocomplete="email" required>
+              </div>
+            </div>
+            <div class="cf-field">
+              <label class="cf-label" for="cf-subject">Objet</label>
+              <input class="cf-input" id="cf-subject" name="subject" type="text" placeholder="Ex : Proposition d'alternance" required>
+            </div>
+            <div class="cf-field">
+              <label class="cf-label" for="cf-message">Message</label>
+              <textarea class="cf-input cf-textarea" id="cf-message" name="message" placeholder="Bonjour Nadine, je souhaitais…" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary magnetic cf-submit">Envoyer</button>
+          </form>
+
+          <!-- Success state -->
+          <div id="cf-success" class="cf-success" aria-hidden="true">
+            <div class="cf-success-check">✓</div>
+            <h3>Merci pour votre message</h3>
+            <p>Votre message a bien été préparé. Je vous répondrai dès que possible.</p>
+            <button type="button" id="cf-reset" class="btn-outline magnetic">Envoyer un autre message</button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <script src="script.js"></script>
+</body>
+</html>
