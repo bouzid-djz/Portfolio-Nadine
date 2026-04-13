@@ -265,7 +265,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!el) return;
     var cursor = el.querySelector('.type-cursor');
     var cursorHTML = cursor ? cursor.outerHTML : '';
-    var name = 'Nadine Bouzid';
+    var name = 'Nadine Ibrahim';
     var idx  = 0;
     function type() {
       el.innerHTML = name.slice(0, idx) + cursorHTML;
