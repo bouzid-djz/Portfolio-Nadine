@@ -16,6 +16,18 @@ var _slider = {
       if (i === 0) s.classList.add('active');
       else         s.classList.remove('active');
     });
+    /* Générer les dots si le conteneur est vide */
+    var dotsWrap = document.getElementById('sliderDots');
+    if (dotsWrap && dotsWrap.children.length === 0) {
+      this.slides.forEach(function (s, i) {
+        var d = document.createElement('button');
+        d.className = 'dot' + (i === 0 ? ' active' : '');
+        d.setAttribute('aria-label', 'Projet ' + (i + 1));
+        (function(idx){ d.addEventListener('click', function () { _slider.goTo(idx); }); })(i);
+        dotsWrap.appendChild(d);
+      });
+      this.dots = Array.from(dotsWrap.querySelectorAll('.dot'));
+    }
     if (this.dots[0]) this.dots[0].classList.add('active');
   },
   goTo: function (index) {
@@ -35,6 +47,9 @@ window.prevProject  = function () { _slider.goTo(_slider.current - 1); };
 window.nextProject  = function () { _slider.goTo(_slider.current + 1); };
 window.goToProject  = function (i) { _slider.goTo(i); };
 
+/* ── ALIAS moveSlide (utilisé dans index.html via onclick="moveSlide(...)") ── */
+window.moveSlide = function (dir) { _slider.goTo(_slider.current + dir); };
+
 /* ── BTS SIO : DÉBOUCHÉS ── */
 window.toggleDebouche = function (id) {
   var panel = document.getElementById('deb-' + id);
@@ -42,6 +57,17 @@ window.toggleDebouche = function (id) {
   if (!panel) return;
   var open = panel.classList.toggle('open');
   if (btn) btn.textContent = 'Voir les débouchés ' + (open ? '▲' : '▼');
+};
+
+/* ── ALIAS toggleDeboucles (utilisé dans index.html via onclick="toggleDeboucles(...)") ── */
+window.toggleDeboucles = function (btn, id) {
+  var panel = document.getElementById('deb-' + id);
+  if (!panel) return;
+  var open = panel.classList.toggle('open');
+  var arrow = open
+    ? '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>'
+    : '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>';
+  btn.innerHTML = arrow + ' Débouchés &amp; compétences';
 };
 
 /* ── LIGHTBOX ── */
