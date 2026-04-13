@@ -683,14 +683,15 @@
     <!-- Thèmes surveillés -->
     <p class="par-label" style="margin-bottom:1rem">Thèmes surveillés</p>
     <div class="chip-row reveal" style="margin-bottom:3rem">
-      <span class="chip">Cybersécurité (vulnérabilités, ransomware, MFA)</span>
-      <span class="chip">Administration système (Windows Server, Active Directory, PowerShell)</span>
-      <span class="chip">Nouvelles technologies IT</span>
+      <span class="chip">🔐 Cybersécurité (vulnérabilités, ransomware, MFA)</span>
+      <span class="chip">🖥️ Administration système (Windows Server, Active Directory, PowerShell)</span>
+      <span class="chip">☁️ Cloud &amp; Infrastructure</span>
+      <span class="chip">🛡️ Nouvelles menaces IT</span>
     </div>
 
     <!-- Sources -->
     <p class="par-label" style="margin-bottom:1.4rem">Sources utilisées</p>
-    <div class="veille-sources-grid reveal">
+    <div class="veille-sources-grid reveal" style="margin-bottom:3rem">
 
       <!-- Google Alertes -->
       <div class="vsource-card glass">
@@ -741,7 +742,168 @@
         </div>
       </div>
 
+      <!-- ANSSI -->
+      <div class="vsource-card glass">
+        <div class="vsource-head">
+          <div class="vsource-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="vsource-meta">
+            <p class="vsource-name">ANSSI</p>
+            <span class="vsource-type">Agence gouvernementale</span>
+          </div>
+        </div>
+        <p class="vsource-desc">L'Agence Nationale de la Sécurité des Systèmes d'Information publie des alertes officielles sur les vulnérabilités critiques, des guides de bonnes pratiques et des recommandations pour la sécurisation des systèmes français.</p>
+        <a href="https://www.cert.ssi.gouv.fr" target="_blank" rel="noopener" class="vsource-link">Visiter ↗</a>
+      </div>
+
     </div>
+
+    <!-- Articles de veille -->
+    <p class="par-label" style="margin-bottom:1rem">Articles &amp; actualités suivis</p>
+
+    <!-- Filtres -->
+    <div class="veille-filters reveal" style="margin-bottom:2rem">
+      <button class="vfilter-btn active" onclick="filterVeille('all', this)">Tous</button>
+      <button class="vfilter-btn" onclick="filterVeille('cybersecu', this)">🔐 Cybersécurité</button>
+      <button class="vfilter-btn" onclick="filterVeille('systeme', this)">🖥️ Systèmes</button>
+      <button class="vfilter-btn" onclick="filterVeille('reseau', this)">🌐 Réseaux</button>
+      <button class="vfilter-btn" onclick="filterVeille('cloud', this)">☁️ Cloud</button>
+    </div>
+
+    <!-- Grille d'articles -->
+    <div class="veille-articles-grid reveal" id="veilleGrid">
+
+      <!-- Article 1 -->
+      <div class="varticle-card glass" data-cat="cybersecu">
+        <div class="varticle-header">
+          <span class="varticle-badge varticle-badge-cybersecu">🔐 Cybersécurité</span>
+          <span class="varticle-date">Mars 2025</span>
+        </div>
+        <h4 class="varticle-title">Ransomware LockBit : démantèlement et nouvelles variantes</h4>
+        <p class="varticle-desc">Le groupe LockBit, responsable de milliers d'attaques par ransomware dans le monde, a été partiellement démantelé par Europol et le FBI. Malgré cette opération, de nouvelles variantes continuent d'émerger, ciblant notamment les infrastructures hospitalières et les collectivités locales.</p>
+        <div class="varticle-tags">
+          <span class="chip">Ransomware</span>
+          <span class="chip">LockBit</span>
+          <span class="chip">Europol</span>
+        </div>
+        <div class="varticle-source">Source : IT-Connect · ANSSI</div>
+      </div>
+
+      <!-- Article 2 -->
+      <div class="varticle-card glass" data-cat="systeme">
+        <div class="varticle-header">
+          <span class="varticle-badge varticle-badge-systeme">🖥️ Systèmes</span>
+          <span class="varticle-date">Fév. 2025</span>
+        </div>
+        <h4 class="varticle-title">Windows Server 2025 : nouvelles fonctionnalités Active Directory</h4>
+        <p class="varticle-desc">Microsoft a introduit dans Windows Server 2025 des améliorations majeures pour Active Directory : support natif de l'authentification passwordless via FIDO2, amélioration des GPO fine-grained password policies, et nouvelles options de délégation Kerberos pour renforcer la sécurité des domaines.</p>
+        <div class="varticle-tags">
+          <span class="chip">Windows Server 2025</span>
+          <span class="chip">Active Directory</span>
+          <span class="chip">FIDO2</span>
+        </div>
+        <div class="varticle-source">Source : Microsoft Docs · IT-Connect</div>
+      </div>
+
+      <!-- Article 3 -->
+      <div class="varticle-card glass" data-cat="cybersecu">
+        <div class="varticle-header">
+          <span class="varticle-badge varticle-badge-cybersecu">🔐 Cybersécurité</span>
+          <span class="varticle-date">Jan. 2025</span>
+        </div>
+        <h4 class="varticle-title">CVE-2024-38063 : faille critique dans la pile IPv6 de Windows</h4>
+        <p class="varticle-desc">Une vulnérabilité critique (score CVSS 9.8) a été découverte dans le traitement des paquets IPv6 de Windows. Elle permettait une exécution de code à distance sans authentification. Microsoft a publié un correctif d'urgence — l'ANSSI a émis une alerte recommandant une mise à jour immédiate.</p>
+        <div class="varticle-tags">
+          <span class="chip">CVE</span>
+          <span class="chip">IPv6</span>
+          <span class="chip">Patch Tuesday</span>
+        </div>
+        <div class="varticle-source">Source : ANSSI · Microsoft Security</div>
+      </div>
+
+      <!-- Article 4 -->
+      <div class="varticle-card glass" data-cat="reseau">
+        <div class="varticle-header">
+          <span class="varticle-badge varticle-badge-reseau">🌐 Réseaux</span>
+          <span class="varticle-date">Déc. 2024</span>
+        </div>
+        <h4 class="varticle-title">Cisco IOS XE : exploitation massive de vulnérabilités</h4>
+        <p class="varticle-desc">Des milliers de routeurs et switches Cisco IOS XE ont été compromis via une vulnérabilité zero-day dans l'interface Web UI. Les attaquants ont créé des comptes administrateurs non autorisés pour maintenir un accès persistant. Cisco a publié des correctifs et recommandé de désactiver l'accès HTTP/HTTPS distant.</p>
+        <div class="varticle-tags">
+          <span class="chip">Cisco</span>
+          <span class="chip">IOS XE</span>
+          <span class="chip">Zero-day</span>
+        </div>
+        <div class="varticle-source">Source : Cisco Talos · IT-Connect</div>
+      </div>
+
+      <!-- Article 5 -->
+      <div class="varticle-card glass" data-cat="cloud">
+        <div class="varticle-header">
+          <span class="varticle-badge varticle-badge-cloud">☁️ Cloud</span>
+          <span class="varticle-date">Nov. 2024</span>
+        </div>
+        <h4 class="varticle-title">Microsoft Entra ID : remplacement progressif d'Azure AD</h4>
+        <p class="varticle-desc">Microsoft a officiellement renommé Azure Active Directory en Microsoft Entra ID, dans le cadre d'une unification de sa plateforme d'identité cloud. Cette transition s'accompagne de nouvelles fonctionnalités : Conditional Access amélioré, intégration Entra ID Governance pour la gestion des accès et révision automatique des droits.</p>
+        <div class="varticle-tags">
+          <span class="chip">Microsoft Entra</span>
+          <span class="chip">Azure AD</span>
+          <span class="chip">IAM</span>
+        </div>
+        <div class="varticle-source">Source : Microsoft Learn · Reddit r/sysadmin</div>
+      </div>
+
+      <!-- Article 6 -->
+      <div class="varticle-card glass" data-cat="cybersecu">
+        <div class="varticle-header">
+          <span class="varticle-badge varticle-badge-cybersecu">🔐 Cybersécurité</span>
+          <span class="varticle-date">Oct. 2024</span>
+        </div>
+        <h4 class="varticle-title">Phishing ciblé (spear-phishing) : nouvelle vague sur les PME françaises</h4>
+        <p class="varticle-desc">L'ANSSI a alerté sur une campagne de spear-phishing sophistiquée ciblant les PME françaises. Les attaquants utilisent des emails très personnalisés imitant des prestataires IT ou des banques pour dérober des identifiants. La mise en place du MFA et la sensibilisation des utilisateurs restent les meilleures défenses.</p>
+        <div class="varticle-tags">
+          <span class="chip">Phishing</span>
+          <span class="chip">MFA</span>
+          <span class="chip">PME</span>
+        </div>
+        <div class="varticle-source">Source : ANSSI · Google Alertes</div>
+      </div>
+
+      <!-- Article 7 -->
+      <div class="varticle-card glass" data-cat="systeme">
+        <div class="varticle-header">
+          <span class="varticle-badge varticle-badge-systeme">🖥️ Systèmes</span>
+          <span class="varticle-date">Sept. 2024</span>
+        </div>
+        <h4 class="varticle-title">PowerShell 7.4 : nouvelles commandes pour l'administration Windows</h4>
+        <p class="varticle-desc">PowerShell 7.4 LTS apporte des améliorations notables pour les administrateurs système : cmdlets améliorées pour la gestion des certificats, meilleure intégration avec Microsoft Graph API pour piloter Azure et Entra ID, et performances accrues dans les pipelines de scripts complexes.</p>
+        <div class="varticle-tags">
+          <span class="chip">PowerShell 7.4</span>
+          <span class="chip">Windows Admin</span>
+          <span class="chip">Automatisation</span>
+        </div>
+        <div class="varticle-source">Source : Microsoft Docs · IT-Connect</div>
+      </div>
+
+      <!-- Article 8 -->
+      <div class="varticle-card glass" data-cat="reseau">
+        <div class="varticle-header">
+          <span class="varticle-badge varticle-badge-reseau">🌐 Réseaux</span>
+          <span class="varticle-date">Août 2024</span>
+        </div>
+        <h4 class="varticle-title">SD-WAN : généralisation dans les réseaux d'entreprise</h4>
+        <p class="varticle-desc">Le SD-WAN (Software-Defined Wide Area Network) s'impose comme la nouvelle norme pour connecter les sites distants d'une entreprise. Contrairement aux liaisons MPLS traditionnelles, le SD-WAN optimise dynamiquement le routage selon la qualité des liens, réduisant les coûts et améliorant les performances pour les applications cloud.</p>
+        <div class="varticle-tags">
+          <span class="chip">SD-WAN</span>
+          <span class="chip">Réseau</span>
+          <span class="chip">Cloud</span>
+        </div>
+        <div class="varticle-source">Source : IT-Connect · LinkedIn</div>
+      </div>
+
+    </div><!-- /veille-articles-grid -->
+
   </div>
 </section>
 
@@ -857,5 +1019,26 @@
   window.addEventListener('scroll', function () { if (current && tip.style.display !== 'none') position(current); }, { passive: true });
 })();
 </script>
+
+<script>
+// ── FILTRE VEILLE ──
+function filterVeille(cat, btn) {
+  document.querySelectorAll('.vfilter-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  document.querySelectorAll('.varticle-card').forEach(function(card){
+    if (cat === 'all' || card.dataset.cat === cat) {
+      card.style.display = '';
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(12px)';
+      requestAnimationFrame(function(){
+        setTimeout(function(){ card.style.transition = 'opacity .3s ease, transform .3s ease'; card.style.opacity = '1'; card.style.transform = 'translateY(0)'; }, 10);
+      });
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+</script>
+
 </body>
 </html>
