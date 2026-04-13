@@ -10,7 +10,6 @@ var _slider = {
   init: function () {
     this.slides = Array.from(document.querySelectorAll('.slide'));
     this.dots   = Array.from(document.querySelectorAll('.dot'));
-    /* s'assurer que seul le premier slide est visible */
     this.slides.forEach(function (s, i) {
       s.style.display = i === 0 ? '' : 'none';
       if (i === 0) s.classList.add('active');
@@ -47,19 +46,17 @@ window.prevProject  = function () { _slider.goTo(_slider.current - 1); };
 window.nextProject  = function () { _slider.goTo(_slider.current + 1); };
 window.goToProject  = function (i) { _slider.goTo(i); };
 
-/* ── ALIAS moveSlide (utilisé dans index.html via onclick="moveSlide(...)") ── */
+/* ── ALIAS moveSlide (onclick="moveSlide(...)") ── */
 window.moveSlide = function (dir) { _slider.goTo(_slider.current + dir); };
 
 /* ── BTS SIO : DÉBOUCHÉS ── */
 window.toggleDebouche = function (id) {
   var panel = document.getElementById('deb-' + id);
-  var btn   = document.getElementById('btn-' + id);
   if (!panel) return;
-  var open = panel.classList.toggle('open');
-  if (btn) btn.textContent = 'Voir les débouchés ' + (open ? '▲' : '▼');
+  panel.classList.toggle('open');
 };
 
-/* ── ALIAS toggleDeboucles (utilisé dans index.html via onclick="toggleDeboucles(...)") ── */
+/* ── ALIAS toggleDeboucles (onclick="toggleDeboucles(btn, id)") ── */
 window.toggleDeboucles = function (btn, id) {
   var panel = document.getElementById('deb-' + id);
   if (!panel) return;
@@ -86,6 +83,14 @@ window.closeLightbox = function () {
   if (!lb) return;
   lb.classList.remove('open');
   document.body.style.overflow = '';
+};
+
+/* ── RESET FORM (onclick="resetForm()") ── */
+window.resetForm = function () {
+  var form    = document.getElementById('contactForm');
+  var success = document.getElementById('cf-success');
+  if (form)    { form.reset(); form.style.display = ''; }
+  if (success) success.classList.remove('show');
 };
 
 /* ══════════════════════════════════════
@@ -146,6 +151,12 @@ document.addEventListener('DOMContentLoaded', function () {
     if (e.key === 'Escape') window.closeLightbox();
   });
 
+  /* ── LIGHTBOX CLOSE BUTTON ── */
+  var lbClose = document.getElementById('lightbox-close');
+  if (lbClose) lbClose.addEventListener('click', window.closeLightbox);
+  var lb = document.getElementById('lightbox');
+  if (lb) lb.addEventListener('click', function (e) { if (e.target === lb) window.closeLightbox(); });
+
   /* ── NAVBAR SCROLL ── */
   (function () {
     var nav = document.querySelector('.navbar');
@@ -158,7 +169,7 @@ document.addEventListener('DOMContentLoaded', function () {
   /* ── BURGER MENU ── */
   (function () {
     var btn  = document.getElementById('burger');
-    var menu = document.getElementById('nav-menu');
+    var menu = document.getElementById('navMenu');
     if (!btn || !menu) return;
     btn.addEventListener('click', function () {
       var open = menu.classList.toggle('open');
@@ -248,18 +259,23 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 55);
   })();
 
-  /* ── TYPED NAME ── */
+  /* ── TYPED NAME (heroName) ── */
   (function () {
-    var el     = document.getElementById('typed-name');
-    var cursor = document.getElementById('type-cursor');
+    var el = document.getElementById('heroName');
     if (!el) return;
-    var name = 'Nadine Ibrahim';
+    var cursor = el.querySelector('.type-cursor');
+    var cursorHTML = cursor ? cursor.outerHTML : '';
+    var name = 'Nadine Bouzid';
     var idx  = 0;
     function type() {
-      el.textContent = name.slice(0, idx);
+      el.innerHTML = name.slice(0, idx) + cursorHTML;
+      cursor = el.querySelector('.type-cursor');
       idx++;
-      if (idx <= name.length) setTimeout(type, 95);
-      else if (cursor) setTimeout(function () { cursor.style.display = 'none'; }, 800);
+      if (idx <= name.length) {
+        setTimeout(type, 95);
+      } else if (cursor) {
+        setTimeout(function () { cursor.style.display = 'none'; }, 800);
+      }
     }
     setTimeout(type, 1400);
   })();
@@ -324,44 +340,9 @@ document.addEventListener('DOMContentLoaded', function () {
     nums.forEach(function (n) { io.observe(n); });
   })();
 
-  /* ── TOOLTIP DÉFINITION ── */
-  (function () {
-    var tip     = document.getElementById('def-tooltip');
-    if (!tip) return;
-    var current = null;
-    function show(el, e) {
-      e.stopPropagation();
-      if (current === el && tip.style.display !== 'none') { tip.style.display = 'none'; current = null; return; }
-      current = el;
-      tip.innerHTML =
-        '<strong style="display:block;margin-bottom:.3rem;color:var(--rose3)">' + el.textContent.trim() + '</strong>' +
-        '<span style="color:var(--txt2);line-height:1.55">' + (el.dataset.def || '') + '</span>';
-      tip.style.display = 'block';
-      position(el);
-    }
-    function position(el) {
-      var r    = el.getBoundingClientRect();
-      var tw   = Math.min(300, window.innerWidth - 24);
-      var left = Math.max(12, Math.min(r.left + r.width / 2 - tw / 2, window.innerWidth - tw - 12));
-      var top  = r.bottom + 10 + window.scrollY;
-      if (r.bottom + 160 > window.innerHeight) top = r.top - 170 + window.scrollY;
-      tip.style.left  = left + 'px';
-      tip.style.top   = top  + 'px';
-      tip.style.width = tw   + 'px';
-    }
-    document.querySelectorAll('.def-tag[data-def], .skill-tag[data-def]').forEach(function (el) {
-      el.style.cursor = 'pointer';
-      el.addEventListener('click', function (e) { show(el, e); });
-    });
-    document.addEventListener('click', function () { tip.style.display = 'none'; current = null; });
-    window.addEventListener('scroll', function () {
-      if (current && tip.style.display !== 'none') position(current);
-    }, { passive: true });
-  })();
-
   /* ── TILT CARDS ── */
   (function () {
-    document.querySelectorAll('.tl-box, .skill-cat, .stat-card, .cert-card, .veille-card').forEach(function (card) {
+    document.querySelectorAll('.tl-box, .skill-cat, .stat-card, .cert-card').forEach(function (card) {
       card.addEventListener('mousemove', function (e) {
         var r  = card.getBoundingClientRect();
         var rx = (0.5 - (e.clientY - r.top)  / r.height) * 6;
@@ -375,48 +356,36 @@ document.addEventListener('DOMContentLoaded', function () {
   /* ── CONTACT FORM ── */
   (function () {
     var form    = document.getElementById('contactForm');
-    var success = document.getElementById('cfSuccess');
-    var errEl   = document.getElementById('cfError');
-    var reset   = document.getElementById('cfReset');
+    var success = document.getElementById('cf-success');
     if (!form || !success) return;
     function validEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
-    function mark(el, bad) {
+    function mark(id, bad) {
+      var el = document.getElementById(id);
+      if (!el) return;
       el.style.borderColor = bad ? 'rgba(248,113,113,.65)' : '';
       el.style.boxShadow   = bad ? '0 0 0 4px rgba(248,113,113,.08)' : '';
     }
+    function showErr(id, msg) {
+      var el = document.getElementById(id);
+      if (el) el.textContent = msg;
+    }
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var name    = document.getElementById('cf-name');
-      var email   = document.getElementById('cf-email');
-      var subject = document.getElementById('cf-subject');
-      var message = document.getElementById('cf-message');
+      var name    = (document.getElementById('cf-name')    || {}).value || '';
+      var email   = (document.getElementById('cf-email')   || {}).value || '';
+      var subject = (document.getElementById('cf-subject') || {}).value || '';
+      var msg     = (document.getElementById('cf-msg')     || {}).value || '';
       var ok = true;
-      [name, email, subject, message].forEach(function (el) { mark(el, false); });
-      if (errEl) errEl.textContent = '';
-      if (!name.value.trim())              { mark(name,    true); ok = false; }
-      if (!validEmail(email.value.trim()))  { mark(email,   true); ok = false; }
-      if (!subject.value.trim())            { mark(subject, true); ok = false; }
-      if (message.value.trim().length < 10) { mark(message, true); ok = false; }
-      if (!ok) { if (errEl) errEl.textContent = 'Veuillez remplir tous les champs correctement.'; return; }
+      ['cf-name','cf-email','cf-subject','cf-msg'].forEach(function(id){ mark(id, false); });
+      showErr('err-name',''); showErr('err-email',''); showErr('err-subject',''); showErr('err-msg','');
+      if (!name.trim())              { mark('cf-name',    true); showErr('err-name',    'Requis'); ok = false; }
+      if (!validEmail(email.trim())) { mark('cf-email',   true); showErr('err-email',   'Email invalide'); ok = false; }
+      if (!subject.trim())           { mark('cf-subject', true); showErr('err-subject', 'Requis'); ok = false; }
+      if (msg.trim().length < 10)    { mark('cf-msg',     true); showErr('err-msg',     'Trop court'); ok = false; }
+      if (!ok) return;
       form.style.display = 'none';
       success.classList.add('show');
     });
-    if (reset) {
-      reset.addEventListener('click', function () {
-        form.reset(); form.style.display = '';
-        success.classList.remove('show');
-      });
-    }
-  })();
-
-  /* ── VEILLE : date auto ── */
-  (function () {
-    var el = document.getElementById('veille-date-auto');
-    if (!el) return;
-    var d = new Date();
-    var months = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
-    el.textContent = d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear() +
-      ' à ' + String(d.getHours()).padStart(2,'0') + ':' + String(d.getMinutes()).padStart(2,'0');
   })();
 
 }); /* fin DOMContentLoaded */
